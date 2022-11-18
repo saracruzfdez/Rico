@@ -4,11 +4,11 @@
     <nav class="navbar navbar-expand navbar-dark bg-dark">
 
         <a href="index.php" class="navbar-brand">Rico</a>
-        
+
         <ul class="navbar-nav">
 
             <li class="nav-item">
-                <a href="" class="nav-link">??</a>
+                <a href="personalSpace.php" class="nav-link"> Espace personnel</a>
             </li>
 
             <li class="nav-item">

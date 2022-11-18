@@ -14,16 +14,16 @@
 <body>
 
     <?php
-    // Recupere les composants de la page espace personnel :
+    // Recupere les composants de la page Nouvelle recette :
     require_once "Component/header.php";
-    require_once "Component/personalSpaceContent.php"
+    require_once "Component/newRecipeContent.php";
     ?>
 
     <?php
     // Recupere le footer :
     require_once "Component/footer.php"
     ?>
-
+    
 </body>
 
 </html>
