@@ -23,7 +23,7 @@
     // Recupere le footer :
     require_once "Component/footer.php"
     ?>
-    
+
 </body>
 
 </html>

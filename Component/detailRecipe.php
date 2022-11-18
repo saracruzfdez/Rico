@@ -21,9 +21,9 @@ $recipes = $query->fetchAll(PDO::FETCH_ASSOC);
 require_once('close.php')
 ?>
 
-<!-- Si le résultat de la requête n'est pas vide (car recette qui n'existe pas par exemple) alors eaffiche le détail, sinon message "Recete inexistante" : -->
+<!-- Si le résultat de la requête existe (isset) et que il n'est pas vide (car recette qui n'existe pas par exemple) alors eaffiche le détail, sinon message "Recete inexistante" : -->
 <?php
-if (!empty($recipes)) {
+if (isset($recipes) && !empty($recipes)) {
 ?>
 
     <!-- Ici le detail de la recette -->

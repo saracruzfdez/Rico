@@ -1,6 +1,6 @@
 <?php
 // On inclut la connexion à la base :
-require_once('connect.php');
+require_once('connectDb.php');
 
 $sql = "SELECT * FROM recipes";
 
@@ -14,7 +14,7 @@ $query->execute();
 $recipes = $query->fetchAll(PDO::FETCH_ASSOC);
 
 // On ferme la connexion :
-require_once 'close.php'
+require_once 'closeDb.php'
 ?>
 
 <!-- Contenu de la page d'accueil recettes, affiche un message de bienvenue et la totalité des recettes stockées dans notre bd -->
@@ -24,10 +24,10 @@ require_once 'close.php'
 
     <p>Connectez vous pour rajouter des recettes à votre espace et créer les votres ;-)</p>
 
-    <?php foreach ($recipes as $recipe) :?>
+    <?php foreach ($recipes as $recipe) : ?>
 
-        <?php require "cardRecipe.php"?>
+        <?php require "cardRecipe.php" ?>
 
-    <?php endforeach;?>
+    <?php endforeach; ?>
 
 </div>

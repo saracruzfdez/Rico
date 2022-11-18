@@ -14,7 +14,7 @@
             <label for="persons" class="form-label mt-2">Nombre de personnes :</label>
             <input class="form-control" name="persons" type="number" id="persons" min="1" max="2">
         </div>
-        
+
         <div class="form-group">
             <label for="time" class="form-label mt-2">Temps :</label>
             <input class="form-control" name="time" type="number" id="time" min="1" max="3">
