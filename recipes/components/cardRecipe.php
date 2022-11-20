@@ -7,7 +7,7 @@
         <h5 class="card-title"><?php echo ucfirst($recipe['title']); ?></h5>
         <h6 class="card-title">par <?php echo ($recipe['user_id']); ?></h6>
         <!-- Dans le lien "Voir recette" je spécifie un query parameter id qui correspond à la recette sur laquelle je me trouve depuis l'accueil (requête HTTP) : -->
-        <a href="recipe.php?id=<?php echo ($recipe['id']); ?>" class="btn btn-primary">Voir la recette</a>
+        <a href= "/PROJET%20PERSO/recipe/recipe.php?id=<?php echo ($recipe['id']); ?>" class="btn btn-primary">Voir la recette</a>
     </div>
-
+    
 </div>

@@ -3,12 +3,12 @@
 
     <nav class="navbar navbar-expand navbar-dark bg-dark">
 
-        <a href="index.php" class="navbar-brand">Rico</a>
+        <a href="/PROJET%20PERSO/recipes/index.php" class="navbar-brand">Rico</a>
 
         <ul class="navbar-nav">
 
             <li class="nav-item">
-                <a href="personalSpace.php" class="nav-link"> Espace personnel</a>
+                <a href="/PROJET%20PERSO/personalSpace/personalSpace.php" class="nav-link"> Espace personnel</a>
             </li>
 
             <li class="nav-item">

@@ -1,7 +1,7 @@
 <!-- Ici le formulaire pour créer une nouvelle recette -->
 <div class="container mb-3 mt-2">
 
-    <form action="form.php" method="POST">
+    <form action="/PROJET%20PERSO/form/form.php" method="GET">
 
         <legend>Nouvelle recette</legend>
 

@@ -1,6 +1,6 @@
 <?php
 // On inclut la connexion à la base :
-require_once('connectDb.php');
+require_once __DIR__.'/../../globalComponents/dbConnection/dbConnect.php';
 
 $sql = "SELECT * FROM recipes";
 
@@ -14,7 +14,7 @@ $query->execute();
 $recipes = $query->fetchAll(PDO::FETCH_ASSOC);
 
 // On ferme la connexion :
-require_once 'closeDb.php'
+require_once __DIR__.'/../../globalComponents/dbConnection/dbClose.php'
 ?>
 
 <!-- Contenu de la page d'accueil recettes, affiche un message de bienvenue et la totalité des recettes stockées dans notre bd -->
@@ -26,7 +26,7 @@ require_once 'closeDb.php'
 
     <?php foreach ($recipes as $recipe) : ?>
 
-        <?php require "cardRecipe.php" ?>
+        <?php require __DIR__."/cardRecipe.php" ?>
 
     <?php endforeach; ?>
 

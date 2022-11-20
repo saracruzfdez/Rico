@@ -1,6 +1,6 @@
 <?php
 // On inclut la connexion à la base :
-require_once('connect.php');
+require_once  __DIR__."/../../globalComponents/dbConnection/dbConnect.php";
 
 // Recupere l'id qui se trouve dans la requête HTTP generée au click du button "Voir la recette" depuis chaque carte recette sur la page d'accueil :
 $recipeID = ($_GET['id']);
@@ -18,7 +18,7 @@ $query->execute();
 $recipes = $query->fetchAll(PDO::FETCH_ASSOC);
 
 // On ferme la connexion :
-require_once('close.php')
+require_once __DIR__."/../../globalComponents/dbConnection/dbClose.php";
 ?>
 
 <!-- Si le résultat de la requête existe (isset) et que il n'est pas vide (car recette qui n'existe pas par exemple) alors eaffiche le détail, sinon message "Recete inexistante" : -->
