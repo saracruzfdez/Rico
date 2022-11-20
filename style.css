@@ -66,3 +66,8 @@ h1 {
 .ingredients, .button {
     padding-bottom: 15px;
 }
+
+.navigation {
+    display: flex;
+    flex-direction: row;
+}

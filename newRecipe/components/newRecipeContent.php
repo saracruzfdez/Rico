@@ -1,7 +1,7 @@
 <!-- Ici le formulaire pour créer une nouvelle recette -->
 <div class="container mb-3 mt-2">
 
-    <form action="/PROJET%20PERSO/form/form.php" method="GET">
+    <form action="/PROJET%20PERSO/form/form.php" method="POST">
 
         <legend>Nouvelle recette</legend>
 
@@ -26,13 +26,13 @@
         </div>
 
         <div class="form-group">
-            <label for="description" class="form-label mt-2">Descriptif : </label>
-            <textarea class="form-control" name="description" type="text" id="description" rows="3"></textarea>
+            <label for="recipe" class="form-label mt-2">Recette : </label>
+            <textarea class="form-control" name="recipe" type="text" id="recipe" rows="3"></textarea>
         </div>
-
+        
         <div class="form-group">
-            <label for="formFile" class="form-label mt-2">Image :</label>
-            <input class="form-control" type="file" id="formFile">
+            <label for="img" class="form-label mt-2">Image (Entrez l'adresse de votre image) : </label>
+            <textarea class="form-control" name="image" type="text" id="img" rows="3"></textarea>
         </div>
 
         <button type="submit" class="btn btn-primary mt-2">Enregistrer</button>

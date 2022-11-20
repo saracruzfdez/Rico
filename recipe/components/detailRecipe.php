@@ -1,6 +1,6 @@
 <?php
 // On inclut la connexion à la base :
-require_once  __DIR__."/../../globalComponents/dbConnection/dbConnect.php";
+require_once  __DIR__ . "/../../globalComponents/dbConnection/dbConnect.php";
 
 // Recupere l'id qui se trouve dans la requête HTTP generée au click du button "Voir la recette" depuis chaque carte recette sur la page d'accueil :
 $recipeID = ($_GET['id']);
@@ -18,10 +18,10 @@ $query->execute();
 $recipes = $query->fetchAll(PDO::FETCH_ASSOC);
 
 // On ferme la connexion :
-require_once __DIR__."/../../globalComponents/dbConnection/dbClose.php";
+require_once __DIR__ . "/../../globalComponents/dbConnection/dbClose.php";
 ?>
 
-<!-- Si le résultat de la requête existe (isset) et que il n'est pas vide (car recette qui n'existe pas par exemple) alors eaffiche le détail, sinon message "Recete inexistante" : -->
+<!-- Si le résultat de la requête existe (isset) et que il n'est pas vide (car recette qui n'existe pas par exemple) alors affiche le détail, sinon message "Recete inexistante" : -->
 <?php
 if (isset($recipes) && !empty($recipes)) {
 ?>
@@ -34,7 +34,7 @@ if (isset($recipes) && !empty($recipes)) {
     <div class="container mt-3">
 
         <h1><?php echo ucfirst($recipes[0]['title']); ?></h1>
-        <h6>par <?php echo ucwords($recipes[0]['user_name']); ?></h6>
+        <h6>par <?php echo ucwords($recipes[0]['user_id']); ?></h6>
 
         <div class="recipe-info">
             <div class="persons"> <?php echo strtolower($recipes[0]['persons']); ?> personnes </div>
@@ -49,10 +49,18 @@ if (isset($recipes) && !empty($recipes)) {
         <p class="bold">Recette :</p>
         <p><?php echo $recipes[0]['recipe']; ?></p>
 
-        <div class="button">
-            <button type="button" class="btn btn-primary">Ajouter recette</button>
-        </div>
+        <div class="navigation">
 
+            <div class="button">
+                <button type="button" class="btn btn-primary">Ajouter recette</button>
+            </div>
+            
+            <!-- <div class="nav-item">
+                <a class="nav-link" href="/PROJET%20PERSO/recipe/components/detailRecipe.php">Retour</a>
+            </div> --> 
+        
+        </div>
+            
     </div>
 
 <?php
