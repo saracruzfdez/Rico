@@ -1,6 +1,7 @@
+<!-- Contenu de la page d'accueil recettes, affiche un message de bienvenue et la totalité des recettes stockées dans notre bd -->
 <?php
 // On inclut la connexion à la base :
-require_once __DIR__.'/../../globalComponents/dbConnection/dbConnect.php';
+require_once __DIR__ . '/../../globalComponents/dbConnection/dbConnect.php';
 
 $sql = "SELECT * FROM recipes";
 
@@ -14,19 +15,19 @@ $query->execute();
 $recipes = $query->fetchAll(PDO::FETCH_ASSOC);
 
 // On ferme la connexion :
-require_once __DIR__.'/../../globalComponents/dbConnection/dbClose.php'
+require_once __DIR__ . '/../../globalComponents/dbConnection/dbClose.php'
 ?>
 
-<!-- Contenu de la page d'accueil recettes, affiche un message de bienvenue et la totalité des recettes stockées dans notre bd -->
+<!-- Ici on boucle sur $recipes pour donner la forme card à chaque recette de notre base de données -->
 <div class="container mt-3">
 
     <h1>Bonjour !</h1>
 
-    <p>Connectez vous pour rajouter des recettes à votre espace et créer les votres ;-)</p>
+    <p>Connectez vous pour rajouter des recettes à votre espace et créer les votres &#128521;</p>
 
     <?php foreach ($recipes as $recipe) : ?>
 
-        <?php require __DIR__."/cardRecipe.php" ?>
+        <?php require __DIR__ . "/cardRecipe.php" ?>
 
     <?php endforeach; ?>
 

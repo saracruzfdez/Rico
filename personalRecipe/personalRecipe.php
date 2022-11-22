@@ -1,4 +1,4 @@
-<!-- Ici notre page d'entrée Recettes-Accueil -->
+<!-- Ici notre page d'entrée Détail de recette d'un active user -->
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -14,11 +14,10 @@
 <body>
 
     <?php
-    // On recupere les composants de la page Recettes-Accueil :
+    // Recupere les composants de la page Détail de recette personnel :
     require_once __DIR__ . "/../globalComponents/header.php";
-    require_once __DIR__ . "/components/imageText.php";
     require_once __DIR__ . "/../globalComponents/config.php";
-    require_once __DIR__ . "/components/content.php";
+    require_once __DIR__ . "/components/detailPersonalRecipe.php";
     require_once __DIR__ . "/../globalComponents/footer.php"
     ?>
 

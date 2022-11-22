@@ -4,6 +4,9 @@
         // Attention à la syntaxe 'mysql:host=localhost:8889;dbname=Rico', pas de espace, sinon erreur "not find driver" :
         $db = new PDO('mysql:host=localhost:8889;dbname=Rico', 'root', 'root');
 
+        // On configure comment le PDO remonte les erreurs :
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
         // Permets d'avoir les échanges qui vont se faire dans la base de données :
         $db->exec('SET NAMES "UTF8"');
     } catch (PDOException $e) {

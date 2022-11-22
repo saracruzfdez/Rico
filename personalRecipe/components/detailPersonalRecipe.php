@@ -1,10 +1,10 @@
-<!-- Page du detail de la recette -->
+<!-- Page du detail de la recette Edition (user active) -->
 
 <?php
 // On inclut la connexion à la base :
 require_once  __DIR__ . "/../../globalComponents/dbConnection/dbConnect.php";
 
-// Recupere l'id qui se trouve dans la requête HTTP generée au click du button "Voir la recette" depuis chaque carte recette sur la page d'accueil :
+// Recupere l'id qui se trouve dans la requête HTTP generée au click du button "Voir la recette" depuis chaque carte recette sur la page Espace Personnel :
 $recipeID = ($_GET['id']);
 $sql = "SELECT * FROM recipes WHERE id = $recipeID";
 
@@ -52,7 +52,7 @@ if (isset($recipes) && !empty($recipes)) {
         <div class="navigation">
 
             <div class="button">
-                <button type="button" class="btn btn-primary">Ajouter recette</button>
+                <button type="button" class="btn btn-primary">Editer recette</button>
             </div>
 
             <!-- <div class="nav-item">

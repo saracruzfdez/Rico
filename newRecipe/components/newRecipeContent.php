@@ -12,12 +12,12 @@
 
         <div class="form-group">
             <label for="persons" class="form-label mt-2">Nombre de personnes :</label>
-            <input class="form-control" name="persons" type="number" id="persons" min="1" max="2">
+            <input class="form-control" name="persons" type="number" id="persons" min="1" max="20">
         </div>
 
         <div class="form-group">
             <label for="time" class="form-label mt-2">Temps :</label>
-            <input class="form-control" name="time" type="number" id="time" min="1" max="3">
+            <input class="form-control" name="time" type="number" id="time" min="1" max="120">
         </div>
 
         <div class="form-group">
@@ -29,7 +29,7 @@
             <label for="recipe" class="form-label mt-2">Recette : </label>
             <textarea class="form-control" name="recipe" type="text" id="recipe" rows="3"></textarea>
         </div>
-        
+
         <div class="form-group">
             <label for="img" class="form-label mt-2">Image (Entrez l'adresse de votre image) : </label>
             <textarea class="form-control" name="image" type="text" id="img" rows="3"></textarea>

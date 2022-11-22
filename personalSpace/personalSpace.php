@@ -1,4 +1,4 @@
-<!-- Ici notre troisième page d'entrée ESPACE PERSO-->
+<!-- Ici notre page d'entrée Espace personnel-->
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -14,14 +14,11 @@
 <body>
 
     <?php
-    // Recupere les composants de la page espace personnel :
-    require_once __DIR__."/../globalComponents/header.php";    
-    require_once __DIR__."/components/personalSpaceContent.php";
-    ?>
-    
-    <?php
-    // Recupere le footer :
-    require_once __DIR__."/../globalComponents/footer.php"
+    // Recupere les composants de la page Espace personnel :
+    require_once __DIR__ . "/../globalComponents/header.php";
+    require_once __DIR__ . "/../globalComponents/config.php";
+    require_once __DIR__ . "/components/personalSpaceContent.php";
+    require_once __DIR__ . "/../globalComponents/footer.php"
     ?>
 
 </body>

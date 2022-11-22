@@ -1,4 +1,4 @@
-<!-- Ici notre troisième page d'entrée ESPACE PERSO-->
+<!-- Ici notre page d'entrée Nouvelle recette-->
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -15,13 +15,10 @@
 
     <?php
     // Recupere les composants de la page Nouvelle recette :
-    require_once __DIR__."/../globalComponents/header.php";    
-    require_once __DIR__."/components/newRecipeContent.php";
-    ?>
-
-    <?php
-    // Recupere le footer :
-    require_once __DIR__."/../globalComponents/footer.php"
+    require_once __DIR__ . "/../globalComponents/header.php";
+    require_once __DIR__ . "/../globalComponents/config.php";
+    require_once __DIR__ . "/components/newRecipeContent.php";
+    require_once __DIR__ . "/../globalComponents/footer.php"
     ?>
 
 </body>
