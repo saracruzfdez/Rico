@@ -1,5 +1,4 @@
 <!-- Page du detail de la recette -->
-
 <?php
 // On inclut la connexion à la base :
 require_once  __DIR__ . "/../../globalComponents/dbConnection/dbConnect.php";
@@ -32,7 +31,7 @@ if (isset($recipes) && !empty($recipes)) {
     </div>
 
     <div class="container mt-3">
-
+        
         <h1><?php echo ucfirst($recipes[0]['title']); ?></h1>
         <h6>par <?php echo ucwords($recipes[0]['user_id']); ?></h6>
 

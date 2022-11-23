@@ -1,4 +1,4 @@
-<!-- Contenu de la page d'accueil recettes, affiche un message de bienvenue et la totalité des recettes stockées dans notre bd -->
+<!-- Contenu de la page d'accueil recettes, affiche un message de bienvenue, et "READ" la totalité des recettes stockées dans notre bd -->
 <?php
 // On inclut la connexion à la base :
 require_once __DIR__ . '/../../globalComponents/dbConnection/dbConnect.php';
