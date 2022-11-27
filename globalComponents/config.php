@@ -1,10 +1,10 @@
 <?php
 // Ici on simule le login d'un user avec la variable $activUser :
 
-$activeUser = [
+/* $activeUser = [
     "id" => "1",
     "name" => "Nuria Cruz"
-];
+]; */
 
 /* $activeUser = [
     "id" => "2",
@@ -16,7 +16,7 @@ $activeUser = [
     "name" => "Paola Pinto"
 ]; */
 
-/* $activeUser = [
+$activeUser = [
     "id" => 4,
     "name" => "Ana Roch"
-]; */
+];

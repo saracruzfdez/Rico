@@ -61,7 +61,7 @@ if (isset($recipes) && !empty($recipes)) { ?>
                 <input class="form-control" name="image" type="text" id="img" min="1" max="3000" value="<?php echo $recipes[0]['image'] ?>">
             </div>
 
-            <input type="hidden" value="<?php echo $recipes[0]['id'] ?>">
+            <input type="hidden" name="id" value="<?php echo $recipes[0]['id'] ?>">
 
             <button type="submit" class="btn btn-primary mt-2">Enregistrer</button>
 

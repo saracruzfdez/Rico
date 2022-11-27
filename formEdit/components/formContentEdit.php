@@ -26,9 +26,11 @@ if ($_POST) {
 
         $sql = "UPDATE `recipes` SET `image`=:image, `title`=:title, `user_id`=:user_id, `persons`=:persons, `time`=:time, `ingredients`=:ingredients, `recipe`=:recipe WHERE `id`=:id;";
 
+        // UPDATE `recipes` SET `image`="GDGVIPDGVFIPG", `title`="pato", `user_id`=1, `persons`=8, `time`=49, `ingredients`="gfiqlzegfimhezq", `recipe`="gfyuoqzegfypgz" WHERE `id`=1 !! MARCHE BIEN !!
+
         $query = $db->prepare($sql);
 
-        $query->bindValue('id', $image, PDO::PARAM_INT);
+        $query->bindValue('id', $id, PDO::PARAM_INT);
         $query->bindValue('image', $image, PDO::PARAM_STR);
         $query->bindValue('title', $title, PDO::PARAM_STR);
         $query->bindValue('user_id', $user_id, PDO::PARAM_INT);
@@ -39,20 +41,11 @@ if ($_POST) {
 
         $query->execute();
 
-
-
-        print_r($db->errorInfo());
-
-
-
         // print_r($query);
-
-
 
         // On inclut la déconnexion à la base :
         require_once  __DIR__ . "/../../globalComponents/dbConnection/dbClose.php";
 ?>
-
         <div class="container mt-3 text-center">
             <div class="button">
                 <p>Ta recette a été modifiée dans ton espace personnel ! &#127881;</p>
