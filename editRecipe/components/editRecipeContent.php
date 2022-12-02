@@ -1,4 +1,4 @@
-<!-- Page du detail de la recette -->
+<!-- Page du detail de édition de la recette -->
 <?php
 // On inclut la connexion à la base :
 require_once  __DIR__ . "/../../globalComponents/dbConnection/dbConnect.php";
@@ -45,12 +45,12 @@ if (isset($recipes) && !empty($recipes)) { ?>
                 <label for="time" class="form-label mt-2">Temps :</label>
                 <input class="form-control" name="time" type="number" id="time" min="1" max="120" value="<?php echo $recipes[0]['time'] ?>">
             </div>
-            
+
             <div class="form-group">
                 <label for="ingredients" class="form-label mt-2">Ingredients :</label>
                 <input class="form-control" name="ingredients" type="text" id="ingredients" min="1" max="3000" value="<?php echo $recipes[0]['ingredients'] ?>">
             </div>
-            
+
             <div class="form-group">
                 <label for="recipe" class="form-label mt-2">Recette :</label>
                 <input class="form-control" name="recipe" type="text" id="recipe" min="1" max="3000" value="<?php echo $recipes[0]['recipe'] ?>">

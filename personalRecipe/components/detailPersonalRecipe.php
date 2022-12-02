@@ -1,4 +1,4 @@
-<!-- Page du detail de la recette Edition (user active) -->
+<!-- Page du detail de la recette Edition (user active) et de Suppression -->
 <?php
 // On inclut la connexion à la base :
 require_once  __DIR__ . "/../../globalComponents/dbConnection/dbConnect.php";
@@ -52,6 +52,10 @@ if (isset($recipes) && !empty($recipes)) {
 
             <div class="button">
                 <a href="/PROJET%20PERSO/editRecipe/editRecipe.php?id=<?php echo ($recipes[0]['id']); ?>"><button type="button" class="btn btn-primary">Editer recette</button></a>
+            </div>
+
+            <div class="button">
+                <a href="/PROJET%20PERSO/deleteRecipe/deleteRecipe.php?id=<?php echo ($recipes[0]['id']); ?>"><button type="button" class="btn btn-primary">Supprimer recette</button></a>
             </div>
 
             <!-- <div class="nav-item">
