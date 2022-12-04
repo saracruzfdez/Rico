@@ -25,9 +25,6 @@ if ($_POST) {
 
         $sql = "INSERT INTO `recipes` (`image`, `title`, `user_id`, `persons`, `time`, `ingredients`, `recipe`) VALUES (:image, :title, :user_id, :persons, :time, :ingredients, :recipe);";
 
-        /* marche bien : 
-        INSERT INTO `recipes` (`image`, `title`, `user_id`, `persons`, `time`, `ingredients`, `recipe`) VALUES ("sdhfjdgq", "dsfhg", 2, 2, 34, "ghdfifdu", "fhjgdfhgos") */
-
         $query = $db->prepare($sql);
 
         $query->bindValue('image', $image, PDO::PARAM_STR);
