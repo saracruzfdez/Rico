@@ -27,7 +27,7 @@ if (isset($users) && !empty($users)) { ?>
     <!-- Ici le formulaire pour supprimer une user -->
     <div class="container mb-3 mt-2">
 
-        <form action="/PROJET%20PERSO/accountFiles/accountFormDelete/accountFormDelete.php" method="POST">
+        <form action="/PROJET%20PERSO/account/accountFormDelete/accountFormDelete.php" method="POST">
 
             <legend>Vous êtes sûr que vous voulez supprimer votre compte ?</legend>
 

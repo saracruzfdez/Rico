@@ -23,7 +23,7 @@ require_once __DIR__ . '/../../../globalComponents/dbConnection/dbClose.php'
 
     <?php foreach ($users as $user) : ?>
 
-        <?php require __DIR__ . "/cardAccount.php" ?>
+        <?php require __DIR__ . "/accountViewCard.php" ?>
 
     <?php endforeach; ?>
 

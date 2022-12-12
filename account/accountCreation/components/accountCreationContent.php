@@ -1,7 +1,7 @@
 <!-- Ici le formulaire pour créer son compte -->
 <div class="container mb-3 mt-2">
 
-    <form action="/PROJET%20PERSO/accountFiles/accountForm/accountForm.php" method="POST">
+    <form action="/PROJET%20PERSO/account/accountForm/accountForm.php" method="POST">
 
         <legend>Créeer un compte</legend>
 

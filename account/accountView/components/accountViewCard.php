@@ -13,12 +13,12 @@
         <div class="mt-3">
             <div class="button">
                 <!-- Dans le lien "Modifier profil" je spécifie un query parameter id qui correspond au profil sur laquelle je me trouve depuis la page compte (requête HTTP) : -->
-                <a href="/PROJET%20PERSO/accountFiles/accountEdition/accountEdition.php?id=<?php echo ($user['id']); ?>" class="btn btn-primary">Editer compte</a>
+                <a href="/PROJET%20PERSO/account/accountEdition/accountEdition.php?id=<?php echo ($user['id']); ?>" class="btn btn-primary">Editer compte</a>
             </div>
 
             <div class="button">
                 <!-- Dans le lien "Supprimer compte" je spécifie un query parameter id qui correspond au profil sur laquelle je me trouve depuis la page compte (requête HTTP) : -->
-                <a href="/PROJET%20PERSO/accountFiles/accountDelete/accountDelete.php?id=<?php echo ($user['id']); ?>" class="btn btn-primary">Supprimer compte</a>
+                <a href="/PROJET%20PERSO/account/accountDelete/accountDelete.php?id=<?php echo ($user['id']); ?>" class="btn btn-primary">Supprimer compte</a>
             </div>
         </div>
 

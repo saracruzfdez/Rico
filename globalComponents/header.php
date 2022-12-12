@@ -27,11 +27,11 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="/PROJET%20PERSO/accountFiles/accountCreation/accountCreation.php">Creer compte</a>
+                        <a class="nav-link" href="/PROJET%20PERSO/account/accountCreation/accountCreation.php">Creer compte</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="/PROJET%20PERSO/accountFiles/account/account.php">Profil</a>
+                        <a class="nav-link" href="/PROJET%20PERSO/account/accountView/accountView.php">Profil</a>
                     </li>
 
                 </ul>

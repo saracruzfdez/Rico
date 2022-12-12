@@ -28,7 +28,7 @@ if (isset($users) && !empty($users)) { ?>
     <!-- Ici le formulaire pour modifier un user -->
     <div class="container mb-3 mt-2">
 
-        <form action="/PROJET%20PERSO/accountFiles/accountFormEdit/accountFormEdit.php" method="POST">
+        <form action="/PROJET%20PERSO/account/accountFormEdit/accountFormEdit.php" method="POST">
 
             <legend>Modifier votre profil</legend>
 
