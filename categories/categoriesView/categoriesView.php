@@ -1,4 +1,4 @@
-<!-- Ici notre page d'entrée form. Ici on récupère et contrôle les données-->
+<!-- Ici notre page d'entrée categories. Ici ??? -->
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -10,8 +10,8 @@
     // Recupere les composants de la page form :
     require_once __DIR__ . "/../../globalComponents/header.php";
     require_once __DIR__ . "/../../globalComponents/config.php";
-    require_once __DIR__ . "/components/accountFormContent.php";
-    require_once __DIR__ . "/../../globalComponents/footer.php"
+    require_once __DIR__ . "/components/categoriesViewContent.php";
+    require_once __DIR__ . "/../../globalComponents/footer.php";
     ?>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

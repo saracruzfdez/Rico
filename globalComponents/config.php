@@ -20,3 +20,8 @@ $activeUser = [
     "id" => 4,
     "name" => "Ana Roch"
 ]; */
+
+$activeCategory = [
+    "id" => "1",
+    "name" => "Entrées"
+];

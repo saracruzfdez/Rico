@@ -31,7 +31,7 @@ h1 {
 }
 
 /* MOBILE, RECETTE */
-#image-Detail {
+#image-detail {
     height: 250px
 }
 
@@ -70,4 +70,8 @@ h1 {
 .navigation {
     display: flex;
     flex-direction: row;
+}
+
+.dropdown-menu {
+    overflow: auto !important;
 }

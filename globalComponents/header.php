@@ -1,35 +1,44 @@
 <!-- Ici notre header qui s'affichera sur chaque page du site -->
 <header>
 
-    <nav class="navbar navbar-expand navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
-        <a href="/PROJET%20PERSO/recipes/index.php" class="navbar-brand">Rico</a>
+        <div class="container-fluid">
 
-        <ul class="navbar-nav">
+            <a class="navbar-brand" href="/PROJET%20PERSO/recipes/index.php">Rico</a>
 
-            <li class="nav-item">
-                <a href="/PROJET%20PERSO/personalSpace/personalSpace.php" class="nav-link"> Espace personnel</a>
-            </li>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-            <li class="nav-item">
-                <a class="nav-link"></a>
-            </li>
+            <div class="collapse navbar-collapse text-right" id="navbarColor01">
+                <ul class="navbar-nav mr-auto">
 
-            <li class="nav-item">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/PROJET%20PERSO/categories/categories/categories.php">Catégories</a>
+                    </li>
 
-                <div class="dropdown show">
-                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Compte </a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/PROJET%20PERSO/personalSpace/personalSpace.php">Espace personnel</a>
+                    </li>
 
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="/PROJET%20PERSO/accountFiles/accountCreation/accountCreation.php">Creer compte</a>
-                        <a class="dropdown-item" href="/PROJET%20PERSO/accountFiles/account/account.php">Profil</a>
-                    </div>
-                </div>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Se connecter</a>
+                    </li>
 
-            </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/PROJET%20PERSO/accountFiles/accountCreation/accountCreation.php">Creer compte</a>
+                    </li>
 
-        </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/PROJET%20PERSO/accountFiles/account/account.php">Profil</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
 
     </nav>
 
