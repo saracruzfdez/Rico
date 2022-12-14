@@ -5,7 +5,7 @@
 
         <div class="container-fluid">
 
-            <a class="navbar-brand" href="/PROJET%20PERSO/recipes/index.php">Rico</a>
+            <a class="navbar-brand" href="/PROJET%20PERSO/recipes/recipes/index.php">Rico</a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -31,7 +31,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="/PROJET%20PERSO/account/accountView/accountView.php">Profil</a>
+                        <a class="nav-link" href="/PROJET%20PERSO/account/account/account.php">Compte</a>
                     </li>
 
                 </ul>

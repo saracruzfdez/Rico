@@ -1,7 +1,7 @@
 <!-- Ici le contenu de la page account form (on récupère les données) : -->
 <?php
 
-// On vérifie qu'il y a des données qui arrivent, que les champs sont remplis et pas vides, c'est notre CREATE  :
+// On vérifie qu'il y a des données qui arrivent, que les champs sont remplis et pas vides, c'est notre edit  :
 if ($_POST) {
     if (
         isset($_POST['id']) && !empty($_POST['id'])

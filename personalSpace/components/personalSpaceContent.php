@@ -21,7 +21,7 @@ require_once __DIR__ . '/../../globalComponents/dbConnection/dbClose.php'
 <div class="container mt-3 text-center">
 
     <div class="button">
-        <a href="/PROJET%20PERSO/newRecipe/newRecipe.php"><button type="button" class="btn btn-primary">Creer une recette</button></a>
+        <a href="/PROJET%20PERSO/personalSpaceRecipeCreation/personalSpaceRecipeCreation.php"><button type="button" class="btn btn-primary">Creer une recette</button></a>
     </div>
 
 </div>

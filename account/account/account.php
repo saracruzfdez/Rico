@@ -1,4 +1,4 @@
-<!-- Ici notre page d'entrée form. Ici on récupère et contrôle les données-->
+<!-- Ici notre page d'entrée form ????? Ici on récupère et contrôle les données-->
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -10,7 +10,7 @@
     // Recupere les composants de la page form :
     require_once __DIR__ . "/../../globalComponents/header.php";
     require_once __DIR__ . "/../../globalComponents/config.php";
-    require_once __DIR__ . "/components/accountFormEditContent.php";
+    require_once __DIR__ . "/components/accountContent.php";
     require_once __DIR__ . "/../../globalComponents/footer.php"
     ?>
 

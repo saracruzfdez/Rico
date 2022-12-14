@@ -1,4 +1,4 @@
-<!-- Ici notre page d'entrée Espace personnel-->
+<!-- Ici notre page d'entrée Editer recette-->
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -7,10 +7,10 @@
 <body>
 
     <?php
-    // Recupere les composants de la page Espace personnel :
+    // Recupere les composants de la page Editer recette :
     require_once __DIR__ . "/../globalComponents/header.php";
     require_once __DIR__ . "/../globalComponents/config.php";
-    require_once __DIR__ . "/components/personalSpaceContent.php";
+    require_once __DIR__ . "/components/personalSpaceRecipeDeleteContent.php";
     require_once __DIR__ . "/../globalComponents/footer.php"
     ?>
 

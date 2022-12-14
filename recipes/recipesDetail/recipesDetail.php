@@ -1,4 +1,4 @@
-<!-- Ici notre page d'entrée form. Ici on récupère et contrôle les données-->
+<!-- Ici notre page d'entrée Détail de recette-->
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -7,10 +7,10 @@
 <body>
 
     <?php
-    // Recupere les composants de la page form :
+    // Recupere les composants de la page Détail de recette :
     require_once __DIR__ . "/../../globalComponents/header.php";
     require_once __DIR__ . "/../../globalComponents/config.php";
-    require_once __DIR__ . "/components/accountFormEditContent.php";
+    require_once __DIR__ . "/components/recipesDetailContent.php";
     require_once __DIR__ . "/../../globalComponents/footer.php"
     ?>
 

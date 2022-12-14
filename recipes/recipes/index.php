@@ -1,16 +1,18 @@
-<!-- Ici notre page d'entrée form. Ici on récupère et contrôle les données-->
+<!-- Ici notre page d'entrée Recettes-Accueil -->
 <!DOCTYPE html>
 <html lang="fr">
 
-<?php require_once __DIR__ . "/../../globalComponents/head.php"; ?>
+<?php
+require_once __DIR__ . "/../../globalComponents/head.php"; ?>
 
 <body>
 
     <?php
-    // Recupere les composants de la page form :
+    // On recupere les composants de la page Recettes-Accueil :
     require_once __DIR__ . "/../../globalComponents/header.php";
+    require_once __DIR__ . "/components/indexImageText.php";
     require_once __DIR__ . "/../../globalComponents/config.php";
-    require_once __DIR__ . "/components/accountFormEditContent.php";
+    require_once __DIR__ . "/components/indexContent.php";
     require_once __DIR__ . "/../../globalComponents/footer.php"
     ?>
 
