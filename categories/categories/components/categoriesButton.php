@@ -10,7 +10,7 @@
         <div class="mt-3">
             <div class="button">
                 <!-- Dans le lien "Modifier cat" je spécifie un query parameter id qui correspond a la cat sur laquelle je me trouve depuis la page cat (requête HTTP) : -->
-                <a href="/PROJET%20PERSO/categories/categoriesEdition/categoriesEdition.php?id=<?php echo ($category['id']); ?>" class="btn btn-primary">Editer categorie</a>
+                <a href="/PROJET%20PERSO/categories/categoriesEdit/categoriesEdit.php?id=<?php echo ($category['id']); ?>" class="btn btn-primary">Editer categorie</a>
             </div>
 
             <div class="button">

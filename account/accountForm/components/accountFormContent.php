@@ -39,24 +39,10 @@ if ($_POST) {
         <div class="container mt-3 text-center">
             <div class="button">
                 <p>Ton compte a été crée ! &#127881;</p>
-                <a href="/PROJET%20PERSO/account/accountView/accountView.php"><button type="button" class="btn btn-primary">Voir compte</button></a>
+                <a href="/PROJET%20PERSO/account/account/account.php"><button type="button" class="btn btn-primary">Voir compte</button></a>
             </div>
-        </div>
-
-    <?php
-    } else {
-        // Si le formulaire est vide ou pas complet on le notifie :
-    ?>
-
-        <div class="container mt-3 text-center">
-
-            <div class="button">
-                <p>Le formulaire est incomplet &#128532;</p>
-                <a href="/PROJET%20PERSO/account/accountCreation/accountCreation.php"><button type="button" class="btn btn-primary">Retour au formulaire</button></a>
-            </div>
-
         </div>
 
 <?php
-    }
+    } 
 }

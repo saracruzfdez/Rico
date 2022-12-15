@@ -1,20 +1,21 @@
 <?php
 // Ici on simule le login d'un user avec la variable $activUser :
 
-$activeUser = [
+/* $activeUser = [
     "id" => "1",
     "name" => "Nuria Cruz"
-];
+]; */
 
-/* $activeUser = [
+/*
+$activeUser = [
     "id" => "2",
     "name" => "José Vidal"
 ]; */
 
-/* $activeUser = [
+$activeUser = [
     "id" => "3",
     "name" => "Paola Pinto"
-]; */
+];
 
 /* $activeUser = [
     "id" => 4,
@@ -22,6 +23,6 @@ $activeUser = [
 ]; */
 
 $activeCategory = [
-    "id" => "1",
+    "id" => "2",
     "name" => "Entrées"
 ];

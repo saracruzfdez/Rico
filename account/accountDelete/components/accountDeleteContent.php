@@ -31,7 +31,7 @@ if (isset($users) && !empty($users)) { ?>
 
             <legend>Vous êtes sûr que vous voulez supprimer votre compte ?</legend>
 
-            <input type="hidden" name="id" value="<?php echo $users[0]['id'] ?>">
+            <input type="hidden" name="id" value="<?php echo $users[0]['id'] ?>" required>
 
             <button type="submit" class="btn btn-primary mt-2">Supprimer</button>
 

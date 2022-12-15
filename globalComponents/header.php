@@ -19,19 +19,11 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="/PROJET%20PERSO/personalSpace/personalSpace.php">Espace personnel</a>
+                        <a class="nav-link" href="/PROJET%20PERSO/personalSpace/personalSpace/personalSpace.php">Espace personnel</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="">Se connecter</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="/PROJET%20PERSO/account/accountCreation/accountCreation.php">Creer compte</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="/PROJET%20PERSO/account/account/account.php">Compte</a>
+                        <a class="nav-link" href="/PROJET%20PERSO/login/loginCreate/loginCreate.php">Connexion/Inscription</a>
                     </li>
 
                 </ul>

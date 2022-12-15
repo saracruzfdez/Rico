@@ -31,7 +31,7 @@ if (isset($categories) && !empty($categories)) { ?>
 
             <legend>Vous êtes sûr que vous voulez supprimer cette categorie ?</legend>
 
-            <input type="hidden" name="id" value="<?php echo $categories[0]['id'] ?>">
+            <input type="hidden" name="id" value="<?php echo $categories[0]['id'] ?>" required>
 
             <button type="submit" class="btn btn-primary mt-2">Supprimer</button>
 

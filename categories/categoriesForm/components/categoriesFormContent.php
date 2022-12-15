@@ -33,20 +33,6 @@ if ($_POST) {
             </div>
         </div>
 
-    <?php
-    } else {
-        // Si le formulaire est vide ou pas complet on le notifie :
-    ?>
-
-        <div class="container mt-3 text-center">
-
-            <div class="button">
-                <p>Le formulaire est incomplet &#128532;</p>
-                <a href="/PROJET%20PERSO/categories/categoriesCreation/categoriesCreation.php"><button type="button" class="btn btn-primary">Retour au formulaire</button></a>
-            </div>
-
-        </div>
-
 <?php
-    }
+    } 
 }

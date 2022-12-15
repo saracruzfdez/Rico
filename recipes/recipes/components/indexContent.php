@@ -21,9 +21,9 @@ require_once __DIR__ . '/../../../globalComponents/dbConnection/dbClose.php'
 <!-- Ici on boucle sur $recipes pour donner la forme card à chaque recette de notre base de données -->
 <div class="container mt-3">
 
-    <h1>Bonjour !</h1>
+    <h1>Bienvenue à Rico !</h1>
 
-    <p>Connectez vous pour rajouter des recettes à votre espace et créer les votres &#128521;</p>
+    <p><a href="">Connectez vous</a> pour rajouter des recettes à votre espace et créer les votres &#128521;</p>
 
     <?php foreach ($recipes as $recipe) : ?>
 

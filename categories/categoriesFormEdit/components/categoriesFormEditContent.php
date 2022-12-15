@@ -24,6 +24,8 @@ if ($_POST) {
 
         $query->execute();
 
+        print_r($query);
+
         // print_r($db->errorInfo());
 
         // On inclut la déconnexion à la base :
@@ -35,20 +37,6 @@ if ($_POST) {
                 <p>La cat a été modifiée ! &#127881;</p>
                 <a href="/PROJET%20PERSO/categories/categories/categories.php"><button type="button" class="btn btn-primary">Voir categories</button></a>
             </div>
-        </div>
-
-    <?php
-    } else {
-        // Si le formulaire est vide ou pas complet on le notifie :
-    ?>
-
-        <div class="container mt-3 text-center">
-
-            <div class="button">
-                <p>Le formulaire est incomplet &#128532;</p>
-                <a href="/PROJET%20PERSO/categories/categoriesEdition/categoriesEdition.php"><button type="button" class="btn btn-primary">Retour au formulaire</button></a>
-            </div>
-
         </div>
 
 <?php

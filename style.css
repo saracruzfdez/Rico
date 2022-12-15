@@ -27,7 +27,7 @@ img {
 }
 
 h1 {
-    font-size: x-large;
+    font-size:xx-large !important;
 }
 
 /* MOBILE, RECETTE */
@@ -63,7 +63,8 @@ h1 {
     font-weight: bolder;
 }
 
-.ingredients, .button {
+.ingredients,
+.button {
     padding-bottom: 15px;
 }
 

@@ -25,7 +25,7 @@ if ($_POST) {
 
             <div class="button">
                 <p>Ton compte a été supprimée &#127881;</p>
-                <a href="/PROJET%20PERSO/account/accountView/accountView.php"><button type="button" class="btn btn-primary">Voir ??</button></a>
+                <a href="/PROJET%20PERSO/account/account/account.php"><button type="button" class="btn btn-primary">Voir ??</button></a>
             </div>
 
         </div>
