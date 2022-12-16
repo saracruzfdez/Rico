@@ -23,7 +23,7 @@ require_once __DIR__ . '/../../../globalComponents/dbConnection/dbClose.php'
 
     <h1>Bienvenue à Rico !</h1>
 
-    <p><a href="">Connectez vous</a> pour rajouter des recettes à votre espace et créer les votres &#128521;</p>
+    <p><a href="/PROJET%20PERSO/login/loginCreate/loginCreate.php">Connectez vous</a> pour rajouter des recettes à votre espace et créer les votres &#128521;</p>
 
     <?php foreach ($recipes as $recipe) : ?>
 

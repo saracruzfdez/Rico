@@ -1,30 +1,29 @@
-<!-- Contenu de la page compte, "READ" la totalité des compte stockées dans notre bd -->
-<?php
-// On inclut la connexion à la base :
-require_once __DIR__ . '/../../../globalComponents/dbConnection/dbConnect.php';
-
-$sql = "SELECT * FROM users";
-
-// On prépare la requête :
-$query = $db->prepare($sql);
-
-// On exécute la requête :
-$query->execute();
-
-// On stocke le résultat dans un tableau (je récupère tout le contenu du tableau avec fetchAll()),
-$users = $query->fetchAll(PDO::FETCH_ASSOC);
-
-// On ferme la connexion :
-require_once __DIR__ . '/../../../globalComponents/dbConnection/dbClose.php'
-?>
-
-<!-- Ici on boucle sur $users pour donner la forme card à chaque user de notre base de données -->
+<!-- Ici notre modèle de carte de user résumée à afficher pour chaque user sur la page d'accueil : -->
 <div class="container mt-3">
 
-    <?php foreach ($users as $user) : ?>
+    <div class="card mb-3">
 
-        <?php require __DIR__ . "/accountCard.php" ?>
+        <div class="card-body">
+            <h5 class="card-title">Profil de <?= $_SESSION["user"]["name"] ?></h5>
+            <p class="bold">Email :</p>
+            <p><?= $_SESSION["user"]["email"] ?></p>
+            <p class="bold">Ville :</p>
+            <p><?= $_SESSION["user"]["city"] ?></p>
 
-    <?php endforeach; ?>
+            <div class="mt-3">
+                <div class="button">
+                    <!-- Dans le lien "Modifier profil" je spécifie un query parameter id qui correspond au profil sur laquelle je me trouve depuis la page compte (requête HTTP) : -->
+                    <a href="/PROJET%20PERSO/account/accountEdit/accountEdit.php?id=<?php echo ($user['id']); ?>" class="btn btn-primary">Editer compte</a>
+                </div>
+
+                <div class="button">
+                    <!-- Dans le lien "Supprimer compte" je spécifie un query parameter id qui correspond au profil sur laquelle je me trouve depuis la page compte (requête HTTP) : -->
+                    <a href="/PROJET%20PERSO/account/accountDelete/accountDelete.php?id=<?php echo ($user['id']); ?>" class="btn btn-primary">Supprimer compte</a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
 
 </div>

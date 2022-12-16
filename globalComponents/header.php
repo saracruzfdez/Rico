@@ -1,3 +1,5 @@
+<?php session_start()?>
+
 <!-- Ici notre header qui s'affichera sur chaque page du site -->
 <header>
 
@@ -24,6 +26,14 @@
 
                     <li class="nav-item">
                         <a class="nav-link" href="/PROJET%20PERSO/login/loginCreate/loginCreate.php">Connexion/Inscription</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/PROJET%20PERSO/login/loginDelete/loginDelete.php">Deconnexion</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/PROJET%20PERSO/account/account/account.php">Profil</a>
                     </li>
 
                 </ul>

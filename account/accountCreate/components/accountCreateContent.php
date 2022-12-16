@@ -3,16 +3,16 @@
 
     <form action="/PROJET%20PERSO/account/accountForm/accountForm.php" method="POST">
 
-        <legend>Créeer un compte</legend>
+        <legend>Inscrivez-vous</legend>
 
         <div class="form-group">
-            <label for="name" class="form-label mt-2">Nom :</label>
+            <label for="name"  class="form-label mt-2">Nom :</label>
             <input class="form-control" name="name" type="text" id="name" required>
         </div>
 
         <div class="form-group">
             <label for="email" class="form-label mt-2">Email :</label>
-            <input class="form-control" name="email" type="text" id="email" min="1" max="120" required>
+            <input class="form-control" name="email" type="email" id="email" min="1" max="120" required>
         </div>
 
         <div class="form-group">
@@ -22,10 +22,10 @@
 
         <div class="form-group">
             <label for="password" class="form-label mt-2">Mot de passe : </label>
-            <input class="form-control" name="password" type="number" id="password" min="1" max="1000" required>
+            <input class="form-control" name="password" type="password" id="password" min="1" max="1000" required>
         </div>
 
-        <button type="submit" class="btn btn-primary mt-2">Créer mon compte</button>
+        <button type="submit" class="btn btn-primary mt-2">M'inscrire</button>
 
     </form>
 
