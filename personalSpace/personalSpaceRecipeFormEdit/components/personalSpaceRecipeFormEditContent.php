@@ -18,7 +18,7 @@ if ($_POST) {
         $id = strip_tags($_POST["id"]);
         $image = strip_tags($_POST["image"]);
         $title = strip_tags($_POST["title"]);
-        $user_id = $activeUser["id"];
+        $user_id = $_SESSION["user"]["id"];
         $category_id = $activeCategory["id"];
         $persons = strip_tags($_POST["persons"]);
         $time = strip_tags($_POST["time"]);

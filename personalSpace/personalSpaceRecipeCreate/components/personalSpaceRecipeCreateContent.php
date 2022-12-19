@@ -11,6 +11,19 @@
         </div>
 
         <div class="form-group">
+
+            <label for="category_id" class="form-label mt-2">Categorie :</label>
+
+            <select name="category_id" id="category_id">
+                <option value="">Coisissez une categorie</option>
+                <option value="1">Entrées</option>
+                <option value="2">Plats</option>
+                <option value="3">Desserts</option>
+            </select>
+
+        </div>
+
+        <div class="form-group">
             <label for="persons" class="form-label mt-2">Nombre de personnes :</label>
             <input class="form-control" name="persons" type="number" id="persons" min="1" max="20" required>
         </div>

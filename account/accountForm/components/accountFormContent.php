@@ -1,6 +1,12 @@
 <!-- Ici le contenu de la page account form (on récupère les données) : -->
 <?php
 
+// Si je suis conecté ne pas aller ds inscription
+if (isset($_SESSION["user"])) {
+    header("Location: account/account/account.php");
+    exit;
+}
+
 // On vérifie qu'il y a des données qui arrivent, que les champs sont remplis et pas vides, c'est notre CREATE  :
 if ($_POST) {
     if (

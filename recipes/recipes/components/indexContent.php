@@ -3,16 +3,32 @@
 // On inclut la connexion à la base :
 require_once __DIR__ . '/../../../globalComponents/dbConnection/dbConnect.php';
 
-$sql = "SELECT * FROM recipes";
+$sql1 = "SELECT * FROM recipes";
 
 // On prépare la requête :
-$query = $db->prepare($sql);
+$query1 = $db->prepare($sql1);
 
 // On exécute la requête :
-$query->execute();
+$query1->execute();
 
 // On stocke le résultat dans un tableau (je récupère tout le contenu du tableau avec fetchAll()),
-$recipes = $query->fetchAll(PDO::FETCH_ASSOC);
+$recipes = $query1->fetchAll(PDO::FETCH_ASSOC);
+
+//
+$sql2 = "SELECT * FROM users;";
+
+// var_dump($sql2);
+
+// On prépare la requête :
+$query2 = $db->prepare($sql2);
+
+// On exécute la requête :
+$query2->execute();
+
+// On stocke le résultat dans un tableau (je récupère tout le contenu du tableau avec fetchAll()),
+$name = $query2->fetchAll(PDO::FETCH_ASSOC);
+
+// print_r($name);
 
 // On ferme la connexion :
 require_once __DIR__ . '/../../../globalComponents/dbConnection/dbClose.php'
@@ -23,7 +39,7 @@ require_once __DIR__ . '/../../../globalComponents/dbConnection/dbClose.php'
 
     <h1>Bienvenue à Rico !</h1>
 
-    <p><a href="/PROJET%20PERSO/login/loginCreate/loginCreate.php">Connectez vous</a> pour rajouter des recettes à votre espace et créer les votres &#128521;</p>
+    <p>Connectez-vous pour rajouter des recettes à vos favoris et créer les votres dans votre espace personnel &#128521;</p>
 
     <?php foreach ($recipes as $recipe) : ?>
 

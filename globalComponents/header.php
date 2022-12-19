@@ -1,4 +1,4 @@
-<?php session_start()?>
+<?php session_start() ?>
 
 <!-- Ici notre header qui s'affichera sur chaque page du site -->
 <header>
@@ -20,21 +20,29 @@
                         <a class="nav-link" href="/PROJET%20PERSO/categories/categories/categories.php">Catégories</a>
                     </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="/PROJET%20PERSO/personalSpace/personalSpace/personalSpace.php">Espace personnel</a>
-                    </li>
+                    <!-- Si je ne suis pas connecté ni enregistré alors affiche : -->
+                    <?php if (!isset($_SESSION["user"])) : ?>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="/PROJET%20PERSO/login/loginCreate/loginCreate.php">Connexion/Inscription</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/PROJET%20PERSO/login/loginCreate/loginCreate.php">Connexion/Inscription</a>
+                        </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="/PROJET%20PERSO/login/loginDelete/loginDelete.php">Deconnexion</a>
-                    </li>
+                        <!-- Dans le cas conraire affiche : -->
+                    <?php else : ?>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="/PROJET%20PERSO/account/account/account.php">Profil</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/PROJET%20PERSO/personalSpace/personalSpace/personalSpace.php">Espace personnel</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/PROJET%20PERSO/account/account/account.php">Profil</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/PROJET%20PERSO/login/loginDelete/loginDelete.php">Deconnexion</a>
+                        </li>
+
+                    <?php endif; ?>
 
                 </ul>
 

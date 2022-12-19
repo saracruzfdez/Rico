@@ -16,6 +16,22 @@ $query->execute();
 // On stocke le résultat dans un tableau (je récupère tout le contenu du tableau avec fetchAll()) :
 $recipes = $query->fetchAll(PDO::FETCH_ASSOC);
 
+//
+$sql2 = "SELECT * FROM users;";
+
+// var_dump($sql2);
+
+// On prépare la requête :
+$query2 = $db->prepare($sql2);
+
+// On exécute la requête :
+$query2->execute();
+
+// On stocke le résultat dans un tableau (je récupère tout le contenu du tableau avec fetchAll()),
+$name = $query2->fetchAll(PDO::FETCH_ASSOC);
+
+// print_r($name)
+
 // On ferme la connexion :
 require_once __DIR__ . "/../../../globalComponents/dbConnection/dbClose.php";
 ?>
@@ -33,7 +49,25 @@ if (isset($recipes) && !empty($recipes)) {
     <div class="container mt-3">
 
         <h1><?php echo ucfirst($recipes[0]['title']); ?></h1>
-        <h6>par <?php echo ucwords($recipes[0]['user_id']); ?></h6>
+
+
+
+        <!-- -->
+        <?php foreach ($recipes as $recipe) : ?>
+
+            <?php foreach ($name as $n) : ?>
+
+                <?php
+                if ($n['id'] === $recipe['user_id']) { ?>
+                    <h6 class="card-title"> par <?php echo ($n['name']); ?></h6>
+
+            <?php }
+            endforeach; ?>
+
+        <?php endforeach; ?>
+
+
+
 
         <div class="recipe-info">
             <div class="persons"> <?php echo strtolower($recipes[0]['persons']); ?> personnes </div>

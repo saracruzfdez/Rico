@@ -3,7 +3,15 @@
 // On inclut la connexion à la base :
 require_once __DIR__ . '/../../../globalComponents/dbConnection/dbConnect.php';
 
-$sql = "SELECT * FROM recipes WHERE recipes.user_id = $activeUser[id]";
+
+
+$sql = "SELECT * FROM recipes WHERE recipes.user_id = ".$_SESSION['user']['id'];
+
+
+
+// print_r($sql);
+// print_r($_SESSION);
+
 
 // On prépare la requête :
 $query = $db->prepare($sql);
@@ -13,6 +21,28 @@ $query->execute();
 
 // On stocke le résultat dans un tableau (je récupère tout le contenu du tableau avec fetchAll()),
 $recipes = $query->fetchAll(PDO::FETCH_ASSOC);
+
+
+
+//
+$sql2 = "SELECT * FROM users;";
+
+// var_dump($sql2);
+
+// On prépare la requête :
+$query2 = $db->prepare($sql2);
+
+// On exécute la requête :
+$query2->execute();
+
+// On stocke le résultat dans un tableau (je récupère tout le contenu du tableau avec fetchAll()),
+$name = $query2->fetchAll(PDO::FETCH_ASSOC);
+
+// print_r($name);
+
+
+
+
 
 // On ferme la connexion :
 require_once __DIR__ . '/../../../globalComponents/dbConnection/dbClose.php'
@@ -29,7 +59,15 @@ require_once __DIR__ . '/../../../globalComponents/dbConnection/dbClose.php'
 <!-- Ici on boucle sur $recipes pour donner la forme card à chaque recette de notre base de données -->
 <div class="container mt-3">
 
-    <p>Salut <?php echo $activeUser['name'] ?>, vos recettes ont l'air &#129316;</p>
+
+
+<!-- -->
+    <?php if (isset($_SESSION["user"])) { ?>
+    <p>Salut <?php echo ($_SESSION["user"]["name"]) ?>, vos recettes ont l'air &#129316;</p>
+<?php
+} ?>
+
+
 
     <?php foreach ($recipes as $recipe) : ?>
 

@@ -6,6 +6,7 @@ if ($_POST) {
     if (
         isset($_POST['image']) && !empty($_POST['image'])
         && isset($_POST['title']) && !empty($_POST['title'])
+        && isset($_POST['category_id']) && !empty($_POST['category_id'])
         && isset($_POST['persons']) && !empty($_POST['persons'])
         && isset($_POST['time']) && !empty($_POST['time'])
         && isset($_POST['ingredients']) && !empty($_POST['ingredients'])
@@ -17,8 +18,8 @@ if ($_POST) {
         // On nettoie les données envoyées :
         $image = strip_tags($_POST["image"]);
         $title = strip_tags($_POST["title"]);
-        $user_id = $activeUser["id"];
-        $category_id = $activeCategory["id"];
+        $user_id = $_SESSION["user"]["id"];
+        $category_id = strip_tags($_POST["category_id"]);;
         $persons = strip_tags($_POST["persons"]);
         $time = strip_tags($_POST["time"]);
         $ingredients = strip_tags($_POST["ingredients"]);
