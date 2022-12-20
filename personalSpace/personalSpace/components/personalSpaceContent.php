@@ -5,7 +5,7 @@ require_once __DIR__ . '/../../../globalComponents/dbConnection/dbConnect.php';
 
 
 
-$sql = "SELECT * FROM recipes WHERE recipes.user_id = ".$_SESSION['user']['id'];
+$sql = "SELECT * FROM recipes WHERE recipes.user_id = " . $_SESSION['user']['id'];
 
 
 
@@ -48,24 +48,24 @@ $name = $query2->fetchAll(PDO::FETCH_ASSOC);
 require_once __DIR__ . '/../../../globalComponents/dbConnection/dbClose.php'
 ?>
 
-<div class="container mt-3 text-center">
 
-    <div class="button">
+<div class="container mt-3">
+
+<legend>Espace personnel</legend>
+
+    <div class="button text-center mt-4">
         <a href="/PROJET%20PERSO/personalSpace/personalSpaceRecipeCreate/personalSpaceRecipeCreate.php"><button type="button" class="btn btn-primary">Creer une recette</button></a>
     </div>
 
-</div>
 
 <!-- Ici on boucle sur $recipes pour donner la forme card à chaque recette de notre base de données -->
-<div class="container mt-3">
 
 
-
-<!-- -->
+    <!-- -->
     <?php if (isset($_SESSION["user"])) { ?>
-    <p>Salut <?php echo ($_SESSION["user"]["name"]) ?>, vos recettes ont l'air &#129316;</p>
-<?php
-} ?>
+        <p>Salut <?php echo ($_SESSION["user"]["name"]) ?>, vos recettes ont l'air &#129316;</p>
+    <?php
+    } ?>
 
 
 

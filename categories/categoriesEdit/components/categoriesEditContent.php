@@ -26,7 +26,7 @@ require_once __DIR__ . "/../../../globalComponents/dbConnection/dbClose.php";
 <?php
 if (isset($categories) && !empty($categories)) { ?>
     <!-- Ici le formulaire pour modifier une cat -->
-    <div class="container mb-3 mt-2">
+    <div class="container mb-3 mt-3">
 
         <form action="/PROJET%20PERSO/categories/categoriesFormEdit/categoriesFormEdit.php" method="POST">
 

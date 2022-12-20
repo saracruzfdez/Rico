@@ -3,7 +3,9 @@
 // On inclut la connexion à la base :
 require_once __DIR__ . '/../../../globalComponents/dbConnection/dbConnect.php';
 
-$sql = "SELECT * FROM recipes WHERE recipes.category_id = $activeCategory[id]";
+
+
+$sql = "SELECT * FROM recipes WHERE recipes.category_id =" . ($_GET['id']);
 
 // On prépare la requête :
 $query = $db->prepare($sql);
@@ -13,6 +15,9 @@ $query->execute();
 
 // On stocke le résultat dans un tableau (je récupère tout le contenu du tableau avec fetchAll()),
 $recipes = $query->fetchAll(PDO::FETCH_ASSOC);
+
+// print_r($recipes);
+
 
 
 //
@@ -28,8 +33,9 @@ $query2->execute();
 $name = $query2->fetchAll(PDO::FETCH_ASSOC);
 
 
+
 //
-$sql3 = "SELECT name FROM categories";
+$sql3 = "SELECT * FROM categories WHERE id =" . ($_GET['id']);
 
 // On prépare la requête :
 $query3 = $db->prepare($sql3);
@@ -52,25 +58,12 @@ require_once __DIR__ . '/../../../globalComponents/dbConnection/dbClose.php'
 
 
 
-
     <!-- -->
-    <?php
-    $recipeID5 = ($_GET['id']);
-    ?>
+    <?php foreach ($categories as $category) : ?>
 
-    <p><?php switch ($recipeID5) {
-            case 1:
-                echo "Entrées"." &#127861";
-                break;
-            case 2:
-                echo "Plats"." &#127837";
-                break;
-            case 3:
-                echo "Desserts"." &#127847";
-                break;
-        }; ?>;</p>
+        <p><?php echo ($category['name']); ?></p>
 
-
+    <?php endforeach; ?>
 
 
 

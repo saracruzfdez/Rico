@@ -1,5 +1,5 @@
 <!-- Ici le formulaire pour créer une categorie -->
-<div class="container mb-3 mt-2">
+<div class="container mt-3">
 
     <form action="/PROJET%20PERSO/categories/categoriesForm/categoriesForm.php" method="POST">
 

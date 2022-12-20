@@ -18,9 +18,11 @@ $categories = $query->fetchAll(PDO::FETCH_ASSOC);
 require_once __DIR__ . '/../../../globalComponents/dbConnection/dbClose.php'
 ?>
 
-<div class="container mt-3 text-center">
+<div class="container mt-3">
 
-    <div class="button">
+<legend>Categories</legend>
+
+    <div class="button text-center mt-4">
         <a href="/PROJET%20PERSO/categories/categoriesCreate/categoriesCreate.php"><button type="button" class="btn btn-primary">Creer une categorie</button></a>
     </div>
 

@@ -25,7 +25,7 @@ require_once __DIR__ . "/../../../globalComponents/dbConnection/dbClose.php";
 if (isset($recipes) && !empty($recipes)) { ?>
 
     <!-- Ici le formulaire pour modifier une recette -->
-    <div class="container mb-3 mt-2">
+    <div class="container mt-3">
 
         <form action="/PROJET%20PERSO/personalSpace/personalSpaceRecipeFormEdit/personalSpaceRecipeFormEdit.php" method="POST">
 
