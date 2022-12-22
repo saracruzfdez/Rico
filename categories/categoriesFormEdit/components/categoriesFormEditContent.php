@@ -24,8 +24,6 @@ if ($_POST) {
 
         $query->execute();
 
-        print_r($query);
-
         // print_r($db->errorInfo());
 
         // On inclut la déconnexion à la base :

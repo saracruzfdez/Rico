@@ -28,18 +28,30 @@ $query2 = $db->prepare($sql2);
 $query2->execute();
 
 // On stocke le résultat dans un tableau (je récupère tout le contenu du tableau avec fetchAll()),
-$name = $query2->fetchAll(PDO::FETCH_ASSOC);
+$names = $query2->fetchAll(PDO::FETCH_ASSOC);
 
 // print_r($name);
+
+//
+$sql3 = "SELECT * FROM users, recipes WHERE users.id = recipes.user_id;";
+
+// var_dump($sql2);
+
+// On prépare la requête :
+$query3 = $db->prepare($sql3);
+
+// On exécute la requête :
+$query3->execute();
+
+// On stocke le résultat dans un tableau (je récupère tout le contenu du tableau avec fetchAll()),
+$names2 = $query3->fetchAll(PDO::FETCH_ASSOC);
 
 // On ferme la connexion :
 require_once __DIR__ . "/../../../globalComponents/dbConnection/dbClose.php";
 ?>
 
 <!-- Si le résultat de la requête existe (isset) et qu'il n'est pas vide (car recette qui n'existe pas par exemple) alors affiche le détail, sinon message "Recette inexistante" : -->
-<?php
-if (isset($recipes) && !empty($recipes)) {
-?>
+<?php if (isset($recipes) && !empty($recipes)) { ?>
 
     <!-- Ici le detail de la recette -->
     <div id="image-detail">
@@ -50,24 +62,16 @@ if (isset($recipes) && !empty($recipes)) {
 
         <h1><?php echo ucfirst($recipes[0]['title']); ?></h1>
 
+        <!-- Si user existant auteur ou pas de la recette, afficher celle-ci. Si user inexistant l'afficher aussi : (L'ORDRE DE CE CODE EST IMPORTANT !) -->
+        <?php if ($names[0]['id'] === $recipes[0]['user_id']) { ?>
+            <h6 class="card-title"> par <?php echo ($names[0]['name']); ?></h6>
 
+        <?php } elseif ($recipes[0]['user_id'] === NULL) { ?>
+            <h6 class="card-title"> par : Ce user n'existe plus !</h6>
 
-        <!-- -->
-        <?php foreach ($recipes as $recipe) : ?>
-
-            <?php foreach ($name as $n) : ?>
-
-                <?php
-                if ($n['id'] === $recipe['user_id']) { ?>
-                    <h6 class="card-title"> par <?php echo ($n['name']); ?></h6>
-
-            <?php }
-            endforeach; ?>
-
-        <?php endforeach; ?>
-
-
-
+        <?php } elseif ($names[0]['id'] !== $recipes[0]['user_id']) { ?>
+            <h6 class="card-title"> par <?php echo ($names2[0]['name']); ?></h6>
+        <?php } ?>
 
         <div class="recipe-info">
             <div class="persons"> <?php echo strtolower($recipes[0]['persons']); ?> personnes </div>
@@ -82,30 +86,44 @@ if (isset($recipes) && !empty($recipes)) {
         <p class="bold">Recette :</p>
         <p><?php echo $recipes[0]['recipe']; ?></p>
 
-        <div class="navigation">
+        <!-- L'ORDRE DU CODE SUIVANT EST IMPORTANT ! -->
+        <!-- Si pas de user connecté, rien : -->
+        <?php if (!isset($_SESSION["user"]) && empty($_SESSION["user"])) { ?>
 
+            <!-- Si user connecté mais auteur recette n'existe plus, possibilité d'ajouter aux favoris : -->
+        <?php } elseif (isset($_SESSION["user"]) && !empty($_SESSION["user"]) && !isset($recipes[0]['user_id'])) { ?>
 
+            <div class="button">
+                <button type="button" class="btn btn-primary">Ajouter aux favorits</button>
+            </div>
 
-            <?php if ($_SESSION["user"]["id"] !== $recipe["user_id"]) { ?>
+            <!-- Si user connecté mais est sur recette d'un autre user existant et non connecté, possibilité d'ajouter aux favoris : -->
+        <?php } elseif ($_SESSION["user"]["id"] === $recipes[0]["user_id"]) { ?>
 
-                <!-- -->
+            <div class="mt-3">
+
                 <div class="button">
-                    <button type="button" class="btn btn-primary">Ajouter aux favorits</button>
+                    <a href="/PROJET%20PERSO/personalSpace/personalSpaceRecipeEdit/personalSpaceRecipeEdit.php?id=<?php echo ($recipes[0]['id']); ?>"><button type="button" class="btn btn-primary">Editer recette</button></a>
                 </div>
 
-            <?php
-            }; ?>
+                <div class="button">
+                    <a href="/PROJET%20PERSO/personalSpace/personalSpaceRecipeDelete/personalSpaceRecipeDelete.php?id=<?php echo ($recipes[0]['id']); ?>"><button type="button" class="btn btn-primary">Supprimer recette</button></a>
+                </div>
 
+            </div>
 
+            <!-- Si user connecté et est l'auteur de la recette, possibilité d'éditer et supprimer recette : -->
+        <?php } elseif (isset($_SESSION["user"]) && !empty($_SESSION["user"]) && ($_SESSION["user"]["id"] !== isset($recipes[0]['user_id']))) { ?>
 
+            <div class="button">
+                <button type="button" class="btn btn-primary">Ajouter aux favorits</button>
+            </div>
 
-        </div>
+        <?php }; ?>
 
     </div>
 
-<?php
-} else {
-?>
+<?php } else { ?>
 
     <div id="image-text">
 
@@ -119,6 +137,4 @@ if (isset($recipes) && !empty($recipes)) {
 
     </div>
 
-<?php
-}
-?>
+<?php } ?>

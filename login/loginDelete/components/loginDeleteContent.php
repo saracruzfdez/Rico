@@ -1,11 +1,5 @@
 <?php
 
-// Si je suis deconecté jy vais à la connexion
-if (!isset($_SESSION["user"])) {
-    header("Location: account/accountCreate/accountCreate.php");
-    exit;
-}
-
 // Supprimer variable $user, le deconecter : 
 unset($_SESSION["user"]);
 ?>

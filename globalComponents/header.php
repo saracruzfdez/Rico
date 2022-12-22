@@ -1,4 +1,4 @@
-<?php session_start() ?>
+<?php session_start(); ?>
 
 <!-- Ici notre header qui s'affichera sur chaque page du site -->
 <header>
@@ -16,20 +16,26 @@
             <div class="collapse navbar-collapse text-right" id="navbarColor01">
                 <ul class="navbar-nav mr-auto">
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="/PROJET%20PERSO/categories/categories/categories.php">Catégories</a>
-                    </li>
-
                     <!-- Si je ne suis pas connecté ni enregistré alors affiche : -->
-                    <?php if (!isset($_SESSION["user"])) : ?>
+                    <?php if (!isset($_SESSION["user"])) { ?>
 
                         <li class="nav-item">
                             <a class="nav-link" href="/PROJET%20PERSO/login/loginCreate/loginCreate.php">Connexion/Inscription</a>
                         </li>
 
-                        <!-- Dans le cas conraire affiche : -->
-                    <?php else : ?>
+                    <?php } 
+                    
+                    // Si je suis connecté et que je suis ADMIN alors affiche :
 
+                    elseif (isset($_SESSION["user"]) && ($_SESSION["user"]["roles"] === ["ROLE ADMIN", "ROLE_ADMIN"])) { ?>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/PROJET%20PERSO/categories/categories/categories.php">Catégories</a>
+                        </li>
+
+                    <?php } else { ?>
+
+                        <!-- Dans le cas conraire affiche : -->
                         <li class="nav-item">
                             <a class="nav-link" href="/PROJET%20PERSO/personalSpace/personalSpace/personalSpace.php">Espace personnel</a>
                         </li>
@@ -40,9 +46,9 @@
 
                         <li class="nav-item">
                             <a class="nav-link" href="/PROJET%20PERSO/login/loginDelete/loginDelete.php">Deconnexion</a>
-                        </li>
+                        </li> 
 
-                    <?php endif; ?>
+                    <?php }; ?>
 
                 </ul>
 

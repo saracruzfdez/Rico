@@ -8,7 +8,6 @@ if ($_POST) {
         && isset($_POST['name']) && !empty($_POST['name'])
         && isset($_POST['email']) && !empty($_POST['email'])
         && isset($_POST['city']) && !empty($_POST['city'])
-        && isset($_POST['password']) && !empty($_POST['password'])
 
     ) {
         // On inclut la connexion à la base :
@@ -19,9 +18,8 @@ if ($_POST) {
         $name = strip_tags($_POST["name"]);
         $email = strip_tags($_POST["email"]);
         $city = strip_tags($_POST["city"]);
-        $password = strip_tags($_POST["password"]);
 
-        $sql = "UPDATE `users` SET `name`=:name, `email`=:email, `city`=:city, `password`=:password WHERE `id`=:id;";
+        $sql = "UPDATE `users` SET `name`=:name, `email`=:email, `city`=:city WHERE `id`=:id;";
 
         $query = $db->prepare($sql);
 
@@ -29,7 +27,6 @@ if ($_POST) {
         $query->bindValue('name', $name, PDO::PARAM_STR);
         $query->bindValue('email', $email, PDO::PARAM_STR);
         $query->bindValue('city', $city, PDO::PARAM_STR);
-        $query->bindValue('password', $password, PDO::PARAM_INT);
 
         $query->execute();
 

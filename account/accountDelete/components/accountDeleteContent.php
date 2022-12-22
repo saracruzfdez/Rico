@@ -4,8 +4,7 @@
 require_once  __DIR__ . "/../../../globalComponents/dbConnection/dbConnect.php";
 
 // Recupere l'id qui se trouve dans la requête HTTP generée au click du button "Supprimer recette" depuis chaque carte user sur la page de detail de recette personnel :
-$userID2 = ($_GET['id']);
-$sql = "SELECT * FROM users WHERE id = $userID2";
+$sql = "SELECT * FROM users WHERE id =" . ($_SESSION["user"]["id"]);
 
 // On prépare la requête :
 $query = $db->prepare($sql);

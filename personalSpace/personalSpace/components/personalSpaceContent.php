@@ -62,9 +62,16 @@ require_once __DIR__ . '/../../../globalComponents/dbConnection/dbClose.php'
 
 
     <!-- -->
-    <?php if (isset($_SESSION["user"])) { ?>
+    <?php if (isset($_SESSION["user"])) { 
+        if(isset($recipes) && !empty($recipes)) {
+
+            ?>
         <p>Salut <?php echo ($_SESSION["user"]["name"]) ?>, vos recettes ont l'air &#129316;</p>
-    <?php
+        <?php
+    } else { ?>
+        <p>Salut <?php echo ($_SESSION["user"]["name"]) ?>, envie de rajouter quelques recettes ? &#129316;</p>
+<?php
+    }
     } ?>
 
 
@@ -76,3 +83,5 @@ require_once __DIR__ . '/../../../globalComponents/dbConnection/dbClose.php'
     <?php endforeach; ?>
 
 </div>
+
+
