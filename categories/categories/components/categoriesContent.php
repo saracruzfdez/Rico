@@ -15,7 +15,7 @@ $query->execute();
 $categories = $query->fetchAll(PDO::FETCH_ASSOC);
 
 // On ferme la connexion :
-require_once __DIR__ . '/../../../globalComponents/dbConnection/dbClose.php'
+require_once __DIR__ . '/../../../globalComponents/dbConnection/x.php'
 ?>
 
 <div class="container mt-3">

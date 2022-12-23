@@ -23,17 +23,20 @@
                             <a class="nav-link" href="/PROJET%20PERSO/login/loginCreate/loginCreate.php">Connexion/Inscription</a>
                         </li>
 
-                    <?php } 
-                    
+                    <?php }
+
                     // Si je suis connecté et que je suis ADMIN alors affiche :
+                    else {  ?>
 
-                    elseif (isset($_SESSION["user"]) && ($_SESSION["user"]["roles"] === ["ROLE ADMIN", "ROLE_ADMIN"])) { ?>
+                        <?php
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="/PROJET%20PERSO/categories/categories/categories.php">Catégories</a>
-                        </li>
+                        if (stripos($_SESSION["user"]["roles"], "ROLE_ADMIN") !== false) { ?>
 
-                    <?php } else { ?>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/PROJET%20PERSO/categories/categories/categories.php">Catégories</a>
+                            </li>
+
+                        <?php } ?>
 
                         <!-- Dans le cas conraire affiche : -->
                         <li class="nav-item">
@@ -46,7 +49,7 @@
 
                         <li class="nav-item">
                             <a class="nav-link" href="/PROJET%20PERSO/login/loginDelete/loginDelete.php">Deconnexion</a>
-                        </li> 
+                        </li>
 
                     <?php }; ?>
 
