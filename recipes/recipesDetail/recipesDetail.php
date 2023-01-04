@@ -9,7 +9,6 @@
     <?php
     // Recupere les composants de la page Détail de recette :
     require_once __DIR__ . "/../../globalComponents/header.php";
-    require_once __DIR__ . "/../../globalComponents/config.php";
     require_once __DIR__ . "/components/recipesDetailContent.php";
     require_once __DIR__ . "/../../globalComponents/footer.php"
     ?>

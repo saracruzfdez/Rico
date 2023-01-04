@@ -9,7 +9,6 @@
     <?php
     // Recupere les composants de la page Espace personnel :
     require_once __DIR__ . "/../../globalComponents/header.php";
-    require_once __DIR__ . "/../../globalComponents/config.php";
     require_once __DIR__ . "/components/personalSpaceContent.php";
     require_once __DIR__ . "/../../globalComponents/footer.php"
     ?>

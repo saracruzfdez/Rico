@@ -11,7 +11,6 @@ require_once __DIR__ . "/../../globalComponents/head.php"; ?>
     // On recupere les composants de la page Recettes-Accueil :
     require_once __DIR__ . "/../../globalComponents/header.php";
     require_once __DIR__ . "/components/indexImageText.php";
-    require_once __DIR__ . "/../../globalComponents/config.php";
     require_once __DIR__ . "/components/indexContent.php";
     require_once __DIR__ . "/../../globalComponents/footer.php"
     ?>

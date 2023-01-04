@@ -9,7 +9,6 @@
     <?php
     // Recupere les composants de la page Nouvelle recette :
     require_once __DIR__ . "/../../globalComponents/header.php";
-    require_once __DIR__ . "/../../globalComponents/config.php";
     require_once __DIR__ . "/components/personalSpaceRecipeCreateContent.php";
     require_once __DIR__ . "/../../globalComponents/footer.php"
     ?>

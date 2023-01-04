@@ -9,7 +9,6 @@
     <?php
     // Recupere les composants de la page edition form :
     require_once __DIR__ . "/../../globalComponents/header.php";
-    require_once __DIR__ . "/../../globalComponents/config.php";
     require_once __DIR__ . "/components/personalSpaceRecipeFormEditContent.php";
     require_once __DIR__ . "/../../globalComponents/footer.php"
     ?>

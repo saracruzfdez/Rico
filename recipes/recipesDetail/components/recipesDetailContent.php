@@ -97,6 +97,26 @@ require_once __DIR__ . "/../../../globalComponents/dbConnection/dbClose.php";
                 <button type="button" class="btn btn-primary">Ajouter aux favorits</button>
             </div>
 
+
+            <!-- In the future, admin would be able to edit and delete recipes of all users : -->
+
+            <?php /* if (isset($recipes) && !empty($recipes) && stripos($_SESSION["user"]["roles"], "ROLE_ADMIN") !== false) { ?>
+
+<div class="mt-3">
+
+    <div class="button">
+        <a href="/PROJET%20PERSO/personalSpace/personalSpaceRecipeEdit/personalSpaceRecipeEdit.php?id=<?php echo ($recipes[0]['id']); ?>"><button type="button" class="btn btn-primary">Editer recette</button></a>
+    </div>
+
+    <div class="button">
+        <a href="/PROJET%20PERSO/personalSpace/personalSpaceRecipeDelete/personalSpaceRecipeDelete.php?id=<?php echo ($recipes[0]['id']); ?>"><button type="button" class="btn btn-primary">Supprimer recette</button></a>
+    </div>
+
+</div> <?php } */ ?>
+
+
+
+
             <!-- Si user connecté mais est sur recette d'un autre user existant et non connecté, possibilité d'ajouter aux favoris : -->
         <?php } elseif ($_SESSION["user"]["id"] === $recipes[0]["user_id"]) { ?>
 

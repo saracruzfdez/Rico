@@ -9,7 +9,6 @@
     <?php
     // On recupere les composants de la page Compte-Accueil :
     require_once __DIR__ . "/../../globalComponents/header.php";
-    require_once __DIR__ . "/../../globalComponents/config.php";
     require_once __DIR__ . "/components/categoriesCreateContent.php";
     require_once __DIR__ . "/../../globalComponents/footer.php"
     ?>
