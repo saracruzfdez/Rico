@@ -33,7 +33,7 @@
                         if (stripos($_SESSION["user"]["roles"], "ROLE_ADMIN") !== false) { ?>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="/PROJET%20PERSO/categories/categories/categories.php">Catégories</a>
+                                <a class="nav-link" href="/PROJET%20PERSO/categories/categories/categories.php">Espace admin</a>
                             </li>
 
                         <?php } ?>

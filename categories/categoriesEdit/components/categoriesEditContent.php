@@ -50,7 +50,7 @@ if (isset($categories) && !empty($categories)) { ?>
     <div id="image-text">
 
         <div id="text">
-            <p>Cette cat n'existe pas !</p>
+            <p>Cette categorie n'existe pas !</p>
         </div>
 
         <div id="image">

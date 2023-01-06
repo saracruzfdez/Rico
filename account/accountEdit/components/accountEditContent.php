@@ -7,7 +7,7 @@ require_once __DIR__ . '/../../../globalComponents/dbConnection/dbConnect.php';
 //
 $sql = "SELECT * FROM users WHERE id =" . ($_SESSION["user"]["id"]);
 
-// var_dump($sql2);
+// var_dump($sql);
 
 // On prépare la requête :
 $query = $db->prepare($sql);
@@ -17,8 +17,6 @@ $query->execute();
 
 // On stocke le résultat dans un tableau (je récupère tout le contenu du tableau avec fetchAll()),
 $user = $query->fetchAll(PDO::FETCH_ASSOC);
-
-// print_r($name);
 
 // On ferme la connexion :
 require_once __DIR__ . '/../../../globalComponents/dbConnection/dbClose.php'
@@ -73,4 +71,4 @@ if (isset($user) && !empty($user)) { ?>
 
     </div>
 
-<?php }
+<?php };

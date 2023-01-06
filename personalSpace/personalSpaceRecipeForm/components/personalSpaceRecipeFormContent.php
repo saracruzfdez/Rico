@@ -25,7 +25,7 @@ if ($_POST) {
         $ingredients = strip_tags($_POST["ingredients"]);
         $recipe = strip_tags($_POST["recipe"]);
 
-        $sql = "INSERT INTO `recipes` (`image`, `title`, `user_id`, `category_id`, `persons`, `time`, `ingredients`, `recipe`) VALUES (:image, :title, :user_id, :category_id, :persons, :time, :ingredients, :recipe);";
+        $sql = "INSERT INTO `recipes` (`image`, `title`, `user_id`, `category_id`, `persons`, `time`, `ingredients`, `recipe`) VALUES (:image, :title, :user_id, :category_id, :persons, :time, :ingredients, :recipe)";
 
         $query = $db->prepare($sql);
 

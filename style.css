@@ -27,7 +27,7 @@ img {
 }
 
 h1 {
-    font-size:xx-large !important;
+    font-size: xx-large !important;
 }
 
 /* MOBILE, RECETTE */
@@ -75,4 +75,9 @@ h1 {
 
 .dropdown-menu {
     overflow: auto !important;
+}
+
+.users {
+    padding-bottom: 15px !important;
+    padding-top: 15px !important;
 }
