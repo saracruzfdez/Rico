@@ -1,9 +1,14 @@
 <!-- Ici le formulaire pour créer une nouvelle recette -->
-<div class="container mt-3">
+
+<div class="d-flex justify-content-center">
+
+<div class="col-md-8 col-lg-8 nopadding">
+
+<div class="container mb-3 mt-3">
 
     <form action="/PROJET%20PERSO/personalSpace/personalSpaceRecipeForm/personalSpaceRecipeForm.php" method="POST">
 
-        <legend>Nouvelle recette</legend>
+        <h3>Nouvelle recette</h3>
 
         <div class="form-group">
             <label for="title" class="form-label mt-2">Titre de votre recette :</label>
@@ -52,5 +57,9 @@
         <button type="submit" class="btn btn-primary mt-2">Enregistrer</button>
 
     </form>
+
+</div>
+
+</div>
 
 </div>

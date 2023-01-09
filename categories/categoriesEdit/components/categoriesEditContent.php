@@ -26,35 +26,44 @@ require_once __DIR__ . "/../../../globalComponents/dbConnection/dbClose.php";
 <?php
 if (isset($categories) && !empty($categories)) { ?>
     <!-- Ici le formulaire pour modifier une cat -->
-    <div class="container mb-3 mt-3">
 
-        <form action="/PROJET%20PERSO/categories/categoriesFormEdit/categoriesFormEdit.php" method="POST">
+    <div class="d-flex justify-content-center">
 
-            <legend>Modifier la categorie</legend>
+        <div class="col-md-8 col-lg-8 nopadding">
 
-            <div class="form-group">
-                <label for="name" class="form-label mt-2">Nom :</label>
-                <input class="form-control" name="name" type="text" id="name" value="<?php echo $categories[0]['name'] ?>" required>
+            <div class="container mb-3 mt-3">
+
+                <form action="/PROJET%20PERSO/categories/categoriesFormEdit/categoriesFormEdit.php" method="POST">
+
+                    <h3>Modifier la categorie</h3>
+
+                    <div class="form-group">
+                        <label for="name" class="form-label mt-2">Nom :</label>
+                        <input class="form-control" name="name" type="text" id="name" value="<?php echo $categories[0]['name'] ?>" required>
+                    </div>
+
+                    <input type="hidden" name="id" value="<?php echo $categories[0]['id'] ?>" required>
+
+                    <button type="submit" class="btn btn-primary mt-2">Enregistrer</button>
+
+                </form>
+
             </div>
 
-            <input type="hidden" name="id" value="<?php echo $categories[0]['id'] ?>" required>
-
-            <button type="submit" class="btn btn-primary mt-2">Enregistrer</button>
-
-        </form>
+        </div>
 
     </div>
 
 <?php } else { ?>
 
-    <div id="image-text">
+    <div class="image-component">
 
-        <div id="text">
-            <p>Cette categorie n'existe pas !</p>
+        <div class="text">
+            <p>Cette catégorie n'existe pas !</p>
         </div>
 
-        <div id="image">
-            <img src="https://images.unsplash.com/photo-1604739220152-cca43b1e7fe8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZW1wdHklMjBkaXNoZXN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="">
+        <div class="image">
+            <img src="https://images.unsplash.com/photo-1561380851-39b27c4f1626?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="">
         </div>
 
     </div>

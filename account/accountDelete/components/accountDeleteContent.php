@@ -28,7 +28,7 @@ if (isset($users) && !empty($users)) { ?>
 
         <form action="/PROJET%20PERSO/account/accountFormDelete/accountFormDelete.php" method="POST">
 
-            <legend>Vous êtes sûr que vous voulez supprimer votre compte ?</legend>
+            <h3>Vous êtes sûr que vous voulez supprimer votre compte ?</h3>
 
             <input type="hidden" name="id" value="<?php echo $users[0]['id'] ?>" required>
 

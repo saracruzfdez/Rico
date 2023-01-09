@@ -6,9 +6,10 @@ unset($_SESSION["user"]);
 
 <div class="container mt-3 text-center">
 
+    <h3>Tu es delogé ! &#127881;</h3>
+
     <div class="button">
-        <p>Tu es delogé ! &#127881;</p>
-        <a href="/PROJET%20PERSO/recipes/recipes/index.php"><button type="button" class="btn btn-primary">Aller à la home</button></a>
+        <a href="/PROJET%20PERSO/recipes/recipes/index.php"><button type="button" class="btn btn-primary mt-2">Aller à la home</button></a>
     </div>
     
 </div>

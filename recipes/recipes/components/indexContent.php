@@ -32,8 +32,6 @@ $name = $query2->fetchAll(PDO::FETCH_ASSOC);
 
 
 
-
-
 $sql3 = "SELECT * FROM categories";
 
 // On prépare la requête :
@@ -47,8 +45,6 @@ $categories = $query3->fetchAll(PDO::FETCH_ASSOC);
 
 
 
-
-
 // On ferme la connexion :
 require_once __DIR__ . '/../../../globalComponents/dbConnection/dbClose.php'
 ?>
@@ -56,36 +52,35 @@ require_once __DIR__ . '/../../../globalComponents/dbConnection/dbClose.php'
 <!-- Ici on boucle sur $recipes pour donner la forme card à chaque recette de notre base de données -->
 <div class="container mt-3">
 
-    <h1>Bienvenue à Rico !</h1>
+    <h3>Bienvenue à Rico !</h3>
 
     <p>Connectez-vous pour rajouter des recettes à vos favoris et créer les votres dans votre espace personnel &#128521;</p>
 
 
 
 
+    <!-- Ici on boucle sur ????? -->
+    <div class="d-flex flex-row flex-wrap justify-content-center">
 
+        <?php foreach ($categories as $category) : ?>
 
-<!-- Ici on boucle sur ????? -->
-<div class="container d-flex flex-row justify-content-between">
+            <?php require __DIR__ . "/categorie.php" ?>
 
-    <?php foreach ($categories as $category) : ?>
+        <?php endforeach; ?>
 
-        <?php require __DIR__ . "/categorie.php" ?>
-
-    <?php endforeach; ?>
-
-</div>
-
+    </div>
 
 
 
 
+    <div class="d-flex flex-row flex-wrap">
 
+        <?php foreach ($recipes as $recipe) : ?>
 
-    <?php foreach ($recipes as $recipe) : ?>
+            <?php require __DIR__ . "/indexCardRecipe.php" ?>
 
-        <?php require __DIR__ . "/indexCardRecipe.php" ?>
+        <?php endforeach; ?>
 
-    <?php endforeach; ?>
+    </div>
 
 </div>

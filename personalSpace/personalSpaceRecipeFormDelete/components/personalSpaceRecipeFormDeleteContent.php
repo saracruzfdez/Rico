@@ -23,9 +23,10 @@ if ($_POST) {
 
         <div class="container mt-3 text-center">
 
+            <h3>Ta recette a été supprimée dans ton espace personnel ! &#127881;</h3>
+
             <div class="button">
-                <p>Ta recette a été supprimée dans ton espace personnel ! &#127881;</p>
-                <a href="/PROJET%20PERSO/personalSpace/personalSpace/personalSpace.php"><button type="button" class="btn btn-primary">Voir espace personnel</button></a>
+                <a href="/PROJET%20PERSO/personalSpace/personalSpace/personalSpace.php"><button type="button" class="btn btn-primary mt-2">Voir espace personnel</button></a>
             </div>
 
         </div>

@@ -31,10 +31,13 @@ if ($_POST) {
 ?>
 
         <div class="container mt-3 text-center">
+
+            <h3>La catégorie a été modifiée ! &#127881;</h3>
+
             <div class="button">
-                <p>La cat a été modifiée ! &#127881;</p>
-                <a href="/PROJET%20PERSO/categories/categories/categories.php"><button type="button" class="btn btn-primary">Voir categories</button></a>
+                <a href="/PROJET%20PERSO/categories/categories/categories.php"><button type="button" class="btn btn-primary mt-2">Voir categories</button></a>
             </div>
+
         </div>
 
 <?php

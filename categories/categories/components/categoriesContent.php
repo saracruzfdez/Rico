@@ -36,9 +36,9 @@ require_once __DIR__ . '/../../../globalComponents/dbConnection/dbClose.php'
 
 <div class="container mt-3">
 
-    <legend>Categories</legend>
+    <h3>Categories</h3>
 
-    <div class="button text-center mt-4">
+    <div class="button text-center mt-3">
         <a href="/PROJET%20PERSO/categories/categoriesCreate/categoriesCreate.php"><button type="button" class="btn btn-primary">Creer une categorie</button></a>
     </div>
 
@@ -47,65 +47,71 @@ require_once __DIR__ . '/../../../globalComponents/dbConnection/dbClose.php'
 <!-- Ici on boucle sur $users pour donner la forme card à chaque user de notre base de données -->
 <div class="container pb-1 mt-3 mb-3">
 
-    <?php foreach ($categories as $category) : ?>
 
-        <?php require __DIR__ . "/categoriesButton.php" ?>
+    <div class="d-flex flex-row flex-wrap">
 
-    <?php endforeach; ?>
+        <?php foreach ($categories as $category) : ?>
+
+            <?php require __DIR__ . "/categoriesButton.php" ?>
+
+        <?php endforeach; ?>
+
+    </div>
+
 
 </div>
 
 
 
+<div class="container-fluid users bg-secondary">
 
 
-
-
-
-
-
-
-<div class="container users bg-secondary">
 
 
     <?php
 
-
     if (stripos($_SESSION["user"]["roles"], "ROLE_ADMIN") !== false) { ?>
 
-        <div class="mb-3">
+        <div class="container mb-3">
 
-
-            <legend class="text-white ">Users</legend>
+            <h3 class="text-white ">Users</h3>
 
         </div>
 
-        <?php };
+    <?php }; ?>
 
 
 
 
+    <div class="container d-flex flex-row flex-wrap">
 
-    foreach ($users as $user2) :
+        <?php
+        foreach ($users as $user2) :
 
-        if (stripos($_SESSION["user"]["roles"], "ROLE_ADMIN") !== false) { ?>
+            if (stripos($_SESSION["user"]["roles"], "ROLE_ADMIN") !== false) { ?>
 
-            <div class="mt-3 mb-3 bg-secondary">
+                <div class="col-sm-6 col-md-6 col-lg-4 nopadding">
 
-                <div class="card">
+                    <div class="ml-1 mr-1 mb-3 bg-secondary">
 
-                    <div class="card-body">
-                        <h5 class="card-title">Profil de <?= $user2["name"] ?></h5>
-                        <p><span class="bold">Email : </span><?= $user2["email"] ?></p>
-                        <p><span class="bold">Ville : </span><?= $user2["city"] ?></p>
+                        <div class="card">
+
+                            <div class="card-body">
+                                <h5 class="card-title">Profil de <?= $user2["name"] ?></h5>
+                                <p><span class="bold">Email : </span><?= $user2["email"] ?></p>
+                                <p><span class="bold">Ville : </span><?= $user2["city"] ?></p>
+                            </div>
+
+                        </div>
+
                     </div>
 
                 </div>
 
-            </div>
+        <?php }
+        endforeach;
+        ?>
 
-    <?php }
-    endforeach;
-    ?>
+    </div>
 
 </div>

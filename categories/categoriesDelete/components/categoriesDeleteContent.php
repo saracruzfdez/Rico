@@ -25,11 +25,13 @@ require_once __DIR__ . "/../../../globalComponents/dbConnection/dbClose.php";
 if (isset($categories) && !empty($categories)) { ?>
 
     <!-- Ici le formulaire pour supprimer une user -->
-    <div class="container mb-3 mt-2">
+    <div class="container mt-3">
+
+    <div class="container mb-3 mt-2 text-center">
 
         <form action="/PROJET%20PERSO/categories/categoriesFormDelete/categoriesFormDelete.php" method="POST">
 
-            <legend>Vous êtes sûr que vous voulez supprimer cette categorie ?</legend>
+            <h3>Vous êtes sûr que vous voulez supprimer cette categorie ?</h3>
 
             <input type="hidden" name="id" value="<?php echo $categories[0]['id'] ?>" required>
 
@@ -39,16 +41,18 @@ if (isset($categories) && !empty($categories)) { ?>
 
     </div>
 
+    </div>
+
 <?php } else { ?>
 
-    <div id="image-text">
+    <div class="image-component">
 
-        <div id="text">
-            <p>Cette categorie n'existe pas !</p>
+        <div class="text">
+            <p>Cette catégorie n'existe pas !</p>
         </div>
 
-        <div id="image">
-            <img src="https://images.unsplash.com/photo-1604739220152-cca43b1e7fe8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZW1wdHklMjBkaXNoZXN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="">
+        <div class="image">
+            <img src="https://images.unsplash.com/photo-1561380851-39b27c4f1626?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="">
         </div>
 
     </div>

@@ -1,9 +1,37 @@
 /* MOBILE, INDEX */
 
 /* Image top */
-#image-text {
+
+.image-component {
     position: relative;
-    height: 250px
+
+}
+
+.image {
+    z-index: 1;
+}
+
+.image>img {
+    width: 100%;
+}
+
+.text {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 2;
+    font-size: 200%;
+    color: white;
+    text-align: center;
+}
+
+.text>p {
+    padding: 120px 20px 0px 20px;
 }
 
 /* Permet de mettre une image dans une div et s'adapter à celle-ci */
@@ -11,28 +39,10 @@ img {
     max-width: 100%;
 }
 
-#text {
-    position: absolute;
-    top: 75px;
-    z-index: 2;
-    font-size: 200%;
-    color: white;
-    padding: 30px;
-    text-align: center;
-}
-
-#image {
-    position: absolute;
-    z-index: 1;
-}
-
-h1 {
-    font-size: xx-large !important;
-}
-
 /* MOBILE, RECETTE */
-#image-detail {
-    height: 250px
+
+.image-banner>img {
+    width: 100%;
 }
 
 .recipe-info {
@@ -80,4 +90,70 @@ h1 {
 .users {
     padding-bottom: 15px !important;
     padding-top: 15px !important;
+}
+
+.nopadding {
+    padding: 0 !important;
+}
+
+
+
+.profil {
+    border-radius: 10% 30% 50% 70%;
+}
+
+
+
+html {
+    font-size: 1rem;
+}
+
+h1 {
+    font-size: 1.2rem ;
+}
+
+h2 {
+    font-size: 1.1rem;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 1.1rem;
+    }
+
+    h1 {
+        font-size: 1.3rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width: 991px) {
+    html {
+        font-size: 1.2rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    html {
+        font-size: 1.2rem;
+    }
+
+    h1 {
+        font-size: 1.7rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
 }

@@ -90,9 +90,9 @@ require_once __DIR__ . '/../../../globalComponents/dbConnection/dbClose.php'
 
 <div class="container mt-3">
 
-<legend>Espace personnel</legend>
+<h3>Espace personnel</h3>
 
-    <div class="button text-center mt-4">
+    <div class="button text-center mt-3">
         <a href="/PROJET%20PERSO/personalSpace/personalSpaceRecipeCreate/personalSpaceRecipeCreate.php"><button type="button" class="btn btn-primary">Creer une recette</button></a>
     </div>
 
@@ -105,7 +105,7 @@ require_once __DIR__ . '/../../../globalComponents/dbConnection/dbClose.php'
 
         if(isset($recipes) && !empty($recipes)) { ?>
 
-        <p>Salut <?php echo ($_SESSION["user"]["name"]) ?>, vos recettes ont l'air &#129316; <br>
+        <p>Salut <?php echo ($_SESSION["user"]["name"]) ?>, vos recettes ont l'air &#129316;
         Vous avez 
         <?php echo (count($recipesStarter)); if (count($recipesStarter) <= 1) { ?> entrée, <?php } else { ?> entrées, <?php };
         echo (count($recipesMain)); if (count($recipesMain) <= 1) { ?> plat, <?php } else { ?> plats, <?php };
@@ -113,8 +113,37 @@ require_once __DIR__ . '/../../../globalComponents/dbConnection/dbClose.php'
         echo (count($recipesDrink)); if (count($recipesDrink) <= 1) { ?> boisson. <?php } else { ?> boissons. <?php };
 
 
-// A FAIRE !!!!!
-// tableau avec 4 sums de cat et boucler pour savoir quel cat est la plus grande, faire un commentaire en consequence.
+        $recipePerCategories = [
+            "Drink" => count($recipesDrink),
+            "Starter" => count($recipesStarter),
+            "Dessert" => count($recipesDessert),
+            "Main" => count($recipesMain),
+        ];
+        
+        arsort($recipePerCategories);
+        
+        $mostUsedCategory = array_key_first($recipePerCategories);
+
+
+// var_dump($mostUsedCategory);
+
+switch ($mostUsedCategory) {
+    case "Drink":
+        $message = "Vous avez beaucoup soif !";
+        break;
+    case "Starter":
+        $message = "Vous adorez bien débuter !";
+        break;
+    case "Dessert":
+        $message = "Vous aimez les gourmandises !";
+        break;
+    case "Main":
+        $message = "Vous aimez les plats forts !";
+        break;
+} 
+
+
+echo $message;
 
 
     } else { ?>
@@ -128,13 +157,14 @@ require_once __DIR__ . '/../../../globalComponents/dbConnection/dbClose.php'
      ?>
 
 
+<div class="d-flex flex-row flex-wrap align-content-center">
+
 
     <?php foreach ($recipes as $recipe) : ?>
 
         <?php require __DIR__ . "/personalSpaceCardRecipe.php" ?>
 
     <?php endforeach; ?>
-
 </div>
-
+</div>
 

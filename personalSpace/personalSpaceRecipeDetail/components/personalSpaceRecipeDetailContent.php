@@ -100,14 +100,14 @@ if (isset($recipes) && !empty($recipes)) {
 } else {
 ?>
 
-    <div id="image-text">
+    <div class="image-component">
 
-        <div id="text">
+        <div class="text">
             <p>Cette recette n'existe pas !</p>
         </div>
 
-        <div id="image">
-            <img src="https://images.unsplash.com/photo-1604739220152-cca43b1e7fe8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZW1wdHklMjBkaXNoZXN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="">
+        <div class="image">
+            <img src="https://images.unsplash.com/photo-1506159904226-d6cfd457c30c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="">
         </div>
 
     </div>

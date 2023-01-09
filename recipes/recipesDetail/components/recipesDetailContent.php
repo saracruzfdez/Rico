@@ -54,20 +54,20 @@ require_once __DIR__ . "/../../../globalComponents/dbConnection/dbClose.php";
 <?php if (isset($recipes) && !empty($recipes)) { ?>
 
     <!-- Ici le detail de la recette -->
-    <div id="image-detail">
+    <div class="image-banner">
         <img src="<?php echo $recipes[0]['image']; ?>" alt="">
     </div>
 
     <div class="container mt-3">
 
-        <h1><?php echo ucfirst($recipes[0]['title']); ?></h1>
+        <h3><?php echo ucfirst($recipes[0]['title']); ?></h3>
 
         <!-- Si user existant auteur ou pas de la recette, afficher celle-ci. Si user inexistant l'afficher aussi : (L'ORDRE DE CE CODE EST IMPORTANT !) -->
         <?php if ($names[0]['id'] === $recipes[0]['user_id']) { ?>
             <h6 class="card-title"> par <?php echo ($names[0]['name']); ?></h6>
 
         <?php } elseif ($recipes[0]['user_id'] === NULL) { ?>
-            <h6 class="card-title"> par : Ce user n'existe plus !</h6>
+            <h6 class="card-title"> par :  </h6>
 
         <?php } elseif ($names[0]['id'] !== $recipes[0]['user_id']) { ?>
             <h6 class="card-title"> par <?php echo ($names2[0]['name']); ?></h6>
@@ -90,31 +90,12 @@ require_once __DIR__ . "/../../../globalComponents/dbConnection/dbClose.php";
         <!-- Si pas de user connecté, rien : -->
         <?php if (!isset($_SESSION["user"]) && empty($_SESSION["user"])) { ?>
 
-            <!-- Si user connecté mais auteur recette n'existe plus, possibilité d'ajouter aux favoris : -->
+            <!-- Si user connecté mais auteur recette , possibilité d'ajouter aux favoris : -->
         <?php } elseif (isset($_SESSION["user"]) && !empty($_SESSION["user"]) && !isset($recipes[0]['user_id'])) { ?>
 
             <div class="button">
                 <button type="button" class="btn btn-primary">Ajouter aux favorits</button>
             </div>
-
-
-            <!-- In the future, admin would be able to edit and delete recipes of all users : -->
-
-            <?php /* if (isset($recipes) && !empty($recipes) && stripos($_SESSION["user"]["roles"], "ROLE_ADMIN") !== false) { ?>
-
-<div class="mt-3">
-
-    <div class="button">
-        <a href="/PROJET%20PERSO/personalSpace/personalSpaceRecipeEdit/personalSpaceRecipeEdit.php?id=<?php echo ($recipes[0]['id']); ?>"><button type="button" class="btn btn-primary">Editer recette</button></a>
-    </div>
-
-    <div class="button">
-        <a href="/PROJET%20PERSO/personalSpace/personalSpaceRecipeDelete/personalSpaceRecipeDelete.php?id=<?php echo ($recipes[0]['id']); ?>"><button type="button" class="btn btn-primary">Supprimer recette</button></a>
-    </div>
-
-</div> <?php } */ ?>
-
-
 
 
             <!-- Si user connecté mais est sur recette d'un autre user existant et non connecté, possibilité d'ajouter aux favoris : -->
@@ -145,16 +126,16 @@ require_once __DIR__ . "/../../../globalComponents/dbConnection/dbClose.php";
 
 <?php } else { ?>
 
-    <div id="image-text">
+    <div class="image-component">
 
-        <div id="text">
-            <p>Cette recette n'existe pas !</p>
-        </div>
+<div class="text">
+    <p>Cette recette n'existe pas !</p>
+</div>
 
-        <div id="image">
-            <img src="https://images.unsplash.com/photo-1604739220152-cca43b1e7fe8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZW1wdHklMjBkaXNoZXN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="">
-        </div>
+<div class="image">
+    <img src="https://images.unsplash.com/photo-1506159904226-d6cfd457c30c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="">
+</div>
 
-    </div>
+</div>
 
 <?php } ?>

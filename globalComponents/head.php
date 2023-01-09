@@ -7,3 +7,4 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/minty/bootstrap.min.css">
     <title>Rico</title>
 </head>
+

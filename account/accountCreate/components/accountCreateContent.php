@@ -1,9 +1,14 @@
 <!-- Ici le formulaire pour créer son compte -->
-<div class="container mb-3 mt-2">
+<div class="d-flex justify-content-center">
+
+
+<div class="col-md-8 col-lg-8 nopadding">
+
+<div class="container mb-3 mt-3">
 
     <form action="/PROJET%20PERSO/account/accountForm/accountForm.php" method="POST">
 
-        <legend>Inscrivez-vous</legend>
+        <h3>Inscrivez-vous</h3>
 
         <div class="form-group">
             <label for="name"  class="form-label mt-2">Nom :</label>
@@ -29,4 +34,7 @@
 
     </form>
 
+</div>
+
+</div>
 </div>

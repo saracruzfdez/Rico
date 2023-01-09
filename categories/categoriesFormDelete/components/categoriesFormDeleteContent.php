@@ -23,9 +23,10 @@ if ($_POST) {
 
         <div class="container mt-3 text-center">
 
+            <h3>La categorie a été supprimée &#127881;</h3>
+
             <div class="button">
-                <p>La categorie a été supprimée &#127881;</p>
-                <a href="/PROJET%20PERSO/categories/categories/categories.php"><button type="button" class="btn btn-primary">Voir ??</button></a>
+                <a href="/PROJET%20PERSO/categories/categories/categories.php"><button type="button" class="btn btn-primary mt-2">Voir les catégories</button></a>
             </div>
 
         </div>
