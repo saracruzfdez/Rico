@@ -1,15 +1,7 @@
 <?php
-
-// Supprimer variable $user, le deconecter : 
+// And then i disconnect the user : 
 unset($_SESSION["user"]);
-?>
 
-<div class="container mt-3 text-center">
-
-    <h3>Tu es delogé ! &#127881;</h3>
-
-    <div class="button">
-        <a href="/PROJET%20PERSO/recipes/recipes/index.php"><button type="button" class="btn btn-primary mt-2">Aller à la home</button></a>
-    </div>
-    
-</div>
+// Redirection to homepage and exit (script) :
+header("Location: http://localhost:8888/PROJET%20PERSO/recipes/recipes/index.php"); 
+exit;

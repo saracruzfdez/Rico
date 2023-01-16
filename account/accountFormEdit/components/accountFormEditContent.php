@@ -1,49 +1,34 @@
-<!-- Ici le contenu de la page account form (on récupère les données) : -->
+<!-- Here we have the data that comes from the accountEdit component ("Modifier COMPTE" form page), that matches with the "Ton compte a été modifié !" page -->
 <?php
+require_once __DIR__ . '/../../../globalComponents/sql.php';
 
-// On vérifie qu'il y a des données qui arrivent, que les champs sont remplis et pas vides, c'est notre edit  :
+// Here we check that the data is coming from accountEdit, set and not empty :
 if ($_POST) {
     if (
         isset($_POST['id']) && !empty($_POST['id'])
         && isset($_POST['name']) && !empty($_POST['name'])
         && isset($_POST['email']) && !empty($_POST['email'])
         && isset($_POST['city']) && !empty($_POST['city'])
-
     ) {
-        // On inclut la connexion à la base :
-        require_once __DIR__ . '/../../../globalComponents/dbConnection/dbConnect.php';
 
-        // On nettoie les données envoyées :
+        // Here we clean data. The strip_tags() delete all null octets nuls and all markup PHP and HTML from code :
         $id = strip_tags($_POST["id"]);
         $name = strip_tags($_POST["name"]);
         $email = strip_tags($_POST["email"]);
         $city = strip_tags($_POST["city"]);
 
-        $sql = "UPDATE `users` SET `name`=:name, `email`=:email, `city`=:city WHERE `id`=:id;";
-
-        $query = $db->prepare($sql);
-
-        $query->bindValue('id', $id, PDO::PARAM_INT);
-        $query->bindValue('name', $name, PDO::PARAM_STR);
-        $query->bindValue('email', $email, PDO::PARAM_STR);
-        $query->bindValue('city', $city, PDO::PARAM_STR);
-
-        $query->execute();
-
-        // print_r($db->errorInfo());
-
-        // On inclut la déconnexion à la base :
-        require_once  __DIR__ . "/../../../globalComponents/dbConnection/dbClose.php";
+        // We check that email is an email. filter_var() filters a variable with a specified filter :
+        if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
+            die("L'adresse email a un format invalide");
+        }
+        updateUser($id, $name, $email, $city)
 ?>
 
         <div class="container mt-3 text-center">
-
             <h3>Ton compte a été modifiée ! &#127881;</h3>
-
             <div class="button">
                 <a href="/PROJET%20PERSO/account/account/account.php"><button type="button" class="btn btn-primary mt-2">Voir compte</button></a>
             </div>
-
         </div>
 
 <?php
