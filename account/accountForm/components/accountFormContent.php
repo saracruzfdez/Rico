@@ -24,7 +24,7 @@ if ($_POST) {
         // And i create de new user avec the function createUser() :
         $newUserId = createUser($name, $password, $city);
 
-        // On stocke ds $_SESSION les infos de user :
+        // We stocke at $_SESSION the user data :
         $_SESSION["user"] = [
             "id" => $newUserId,
             "name" => $name,

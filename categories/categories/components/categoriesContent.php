@@ -1,9 +1,10 @@
 <!-- // This is the page that shows READ all the categories : -->
 <?php
 require_once __DIR__ . '/../../../globalComponents/sql.php';
+require_once __DIR__ . '/../../../globalComponents/utils.php';
 
-// I call de function selectCategorie() :
-$categories = selectCategorie();
+// I call de function selectCategories() :
+$categories = selectCategories();
 
 $users = selectUsersExceptConnected();
 ?>
@@ -18,7 +19,7 @@ $users = selectUsersExceptConnected();
 
 <!-- CONTINUER ICI !!!!!!!!!!!! -->
 
-<!-- Ici on boucle sur $users pour donner la forme card à chaque user de notre base de données -->
+<!-- Ici on boucle sur $categories pour donner la forme card à chaque user de notre base de données -->
 <div class="container pb-1 mt-3 mb-3">
     <div class="d-flex flex-row flex-wrap">
         <?php foreach ($categories as $category) : ?>
@@ -30,23 +31,18 @@ $users = selectUsersExceptConnected();
 <div class="container-fluid users bg-secondary">
     <?php
 
-
-
     // Si tu es admin affiche la liste de users :
-    if (stripos($_SESSION["user"]["roles"], "ROLE_ADMIN") !== false) { ?>
-<div class="container mb-3">
+    if (isActiveUserAdmin()) { ?>
+        <div class="container mb-3">
             <h3 class="text-white ">Users</h3>
         </div>
     <?php }; ?>
 
-
-
     <div class="container d-flex flex-row flex-wrap">
 
         <?php
-        foreach ($users as $user2) :
-
-            if (stripos($_SESSION["user"]["roles"], "ROLE_ADMIN") !== false) { ?>
+        foreach ($users as $user) :
+            if (isActiveUserAdmin()) { ?>
 
                 <div class="col-sm-6 col-md-6 col-lg-4 nopadding">
 
@@ -55,9 +51,9 @@ $users = selectUsersExceptConnected();
                         <div class="card">
 
                             <div class="card-body">
-                                <h5 class="card-title">Profil de <?= $user2["name"] ?></h5>
-                                <p><span class="bold">Email : </span><?= $user2["email"] ?></p>
-                                <p><span class="bold">Ville : </span><?= $user2["city"] ?></p>
+                                <h5 class="card-title">Profil de <?= $user["name"] ?></h5>
+                                <p><span class="bold">Email : </span><?= $user["email"] ?></p>
+                                <p><span class="bold">Ville : </span><?= $user["city"] ?></p>
                             </div>
 
                         </div>

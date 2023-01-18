@@ -9,25 +9,10 @@ if ($_POST) {
 
     ) {
         // On inclut la connexion à la base :
-        require_once __DIR__ . '/../../../globalComponents/dbConnection/dbConnect.php';
+        require_once __DIR__ . '/../../../globalComponents/sql.php';
 
-        // On nettoie les données envoyées :
-        $id = strip_tags($_POST["id"]);
-        $name = strip_tags($_POST["name"]);
-
-        $sql = "UPDATE `categories` SET `name`=:name WHERE `id`=:id;";
-
-        $query = $db->prepare($sql);
-
-        $query->bindValue('id', $id, PDO::PARAM_INT);
-        $query->bindValue('name', $name, PDO::PARAM_STR);
-
-        $query->execute();
-
-        // print_r($db->errorInfo());
-
-        // On inclut la déconnexion à la base :
-        require_once  __DIR__ . "/../../../globalComponents/dbConnection/dbClose.php";
+        updateCategory($_POST["id"], $_POST["name"])
+       
 ?>
 
         <div class="container mt-3 text-center">

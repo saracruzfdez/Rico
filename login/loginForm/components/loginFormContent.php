@@ -20,17 +20,11 @@ if ($_POST) {
         }
 
         // On inclut la connexion à la base :
-        require_once __DIR__ . '/../../../globalComponents/dbConnection/dbConnect.php';
+        require_once __DIR__ . '/../../../globalComponents/sql.php';
 
-        $sql = "SELECT * FROM `users` WHERE `email` = :email";
 
-        $query = $db->prepare($sql);
+        $user = selectUserByEmail($_POST["email"]);    
 
-        $query->bindValue(':email', $_POST["email"], PDO::PARAM_STR);
-
-        $query->execute();
-
-        $user = $query->fetch();
 
         if (!$user) {
             die("L'utilisateur et ou le mdp est incorrect");

@@ -8,7 +8,7 @@
 <body>
     <?php
     // Here we have the differents components of the "Etes vous sur de supprimer votre compte" form page : 
-        require_once __DIR__ . "/../../globalComponents/header.php";
+    require_once __DIR__ . "/../../globalComponents/header.php";
     require_once __DIR__ . "/components/accountDeleteContent.php";
     require_once __DIR__ . "/../../globalComponents/footer.php"
     ?>

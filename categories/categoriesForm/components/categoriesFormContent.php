@@ -7,23 +7,11 @@ if ($_POST) {
         isset($_POST['name']) && !empty($_POST['name'])
     ) {
         // On inclut la connexion à la base :
-        require_once __DIR__ . '/../../../globalComponents/dbConnection/dbConnect.php';
+        require_once __DIR__ . '/../../../globalComponents/sql.php';
 
         // On nettoie les données envoyées :
-        $name = strip_tags($_POST["name"]);
+        createCategory(strip_tags($_POST["name"]));
 
-        $sql = "INSERT INTO `categories` (`name`) VALUES (:name);";
-
-        $query = $db->prepare($sql);
-
-        $query->bindValue('name', $name, PDO::PARAM_STR);
-
-        $query->execute();
-
-        // print_r($db->errorInfo());
-
-        // On inclut la déconnexion à la base :
-        require_once  __DIR__ . "/../../../globalComponents/dbConnection/dbClose.php";
 ?>
 
         <div class="container mt-3 text-center">
@@ -33,9 +21,9 @@ if ($_POST) {
             <div class="button">
                 <a href="/PROJET%20PERSO/categories/categories/categories.php"><button type="button" class="btn btn-primary mt-2">Voir les categories</button></a>
             </div>
-            
+
         </div>
 
 <?php
-    } 
+    }
 }

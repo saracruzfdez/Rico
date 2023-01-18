@@ -9,15 +9,13 @@
     <div class="card-body">
         <h5 class="card-title"><?php echo ucfirst($recipe['title']); ?></h5>
 
+        <?php foreach ($users as $user) : ?>
 
-    <!-- ??? -->
-        <?php foreach ($name as $n) : ?>
-
-            <?php if ($n['id'] === $recipe['user_id']) { ?>
-                <h6 class="card-title"> par <?php echo ($n['name']); ?></h6>
+            <?php if ($user['id'] === $recipe['user_id']) { ?>
+                <h6 class="card-title"> par <?php echo ($user['name']); ?></h6>
             <?php }
-        endforeach;
 
+        endforeach;
 
         if ($recipe['user_id'] === NULL) { ?>
             <h6 class="card-title"> par : Ce user n'existe plus</h6>

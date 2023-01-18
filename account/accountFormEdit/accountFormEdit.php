@@ -12,7 +12,7 @@
     require_once __DIR__ . "/components/accountFormEditContent.php";
     require_once __DIR__ . "/../../globalComponents/footer.php"
     ?>
-    <!-- Here i have the required scripts (to the correct functioning of Bootstrap Javascript) of the "Ton compte est modifié !" page : -->
+    <!-- Here i have the required scripts (to the correct functioning of Bootstrap Javascript) of the "Ton compte est supprimé !" page : -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>

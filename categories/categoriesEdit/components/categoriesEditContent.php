@@ -1,30 +1,15 @@
 <!-- Page du detail de édition d'une cat -->
 <?php
 // On inclut la connexion à la base :
-require_once  __DIR__ . "/../../../globalComponents/dbConnection/dbConnect.php";
+require_once  __DIR__ . "/../../../globalComponents/sql.php";
 
-// Recupere l'id qui se trouve dans la requête HTTP generée au click du button "Editer cat" depuis chaque carte cat sur la page cat :
-$catID2 = ($_GET['id']);
-$sql = "SELECT * FROM categories WHERE id = $catID2";
 
-// On prépare la requête :
-$query = $db->prepare($sql);
-
-// On exécute la requête :
-$query->execute();
-
-// On stocke le résultat dans un tableau (je récupère tout le contenu du tableau avec fetchAll()) :
-$categories = $query->fetchAll(PDO::FETCH_ASSOC);
-
-// var_dump($users);
-
-// On ferme la connexion :
-require_once __DIR__ . "/../../../globalComponents/dbConnection/dbClose.php";
+$category = selectCategoryById(($_GET['id']))
 ?>
 
 <!-- Si le résultat de la requête existe (isset) et qu'il n'est pas vide (car user qui n'existe pas par exemple) alors affiche le détail, sinon message "user inexistante" : -->
 <?php
-if (isset($categories) && !empty($categories)) { ?>
+if (isset($category)) { ?>
     <!-- Ici le formulaire pour modifier une cat -->
 
     <div class="d-flex justify-content-center">
@@ -39,10 +24,10 @@ if (isset($categories) && !empty($categories)) { ?>
 
                     <div class="form-group">
                         <label for="name" class="form-label mt-2">Nom :</label>
-                        <input class="form-control" name="name" type="text" id="name" value="<?php echo $categories[0]['name'] ?>" required>
+                        <input class="form-control" name="name" type="text" id="name" value="<?php echo $category['name'] ?>" required>
                     </div>
 
-                    <input type="hidden" name="id" value="<?php echo $categories[0]['id'] ?>" required>
+                    <input type="hidden" name="id" value="<?php echo $category['id'] ?>" required>
 
                     <button type="submit" class="btn btn-primary mt-2">Enregistrer</button>
 

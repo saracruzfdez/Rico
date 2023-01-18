@@ -1,52 +1,17 @@
 <!-- Contenu de la page d'accueil recettes, affiche un message de bienvenue, et "READ" la totalité des recettes stockées dans notre bd -->
 <?php
 // On inclut la connexion à la base :
-require_once __DIR__ . '/../../../globalComponents/dbConnection/dbConnect.php';
-
-$sql1 = "SELECT * FROM recipes";
-
-// On prépare la requête :
-$query1 = $db->prepare($sql1);
-
-// On exécute la requête :
-$query1->execute();
+require_once __DIR__ . '/../../../globalComponents/sql.php';
 
 // On stocke le résultat dans un tableau (je récupère tout le contenu du tableau avec fetchAll()),
-$recipes = $query1->fetchAll(PDO::FETCH_ASSOC);
-
-//
-$sql2 = "SELECT * FROM users;";
-
-// var_dump($sql2);
-
-// On prépare la requête :
-$query2 = $db->prepare($sql2);
-
-// On exécute la requête :
-$query2->execute();
+$recipes = selectRecipes();
 
 // On stocke le résultat dans un tableau (je récupère tout le contenu du tableau avec fetchAll()),
-$name = $query2->fetchAll(PDO::FETCH_ASSOC);
-
-// print_r($name);
-
-
-
-$sql3 = "SELECT * FROM categories";
-
-// On prépare la requête :
-$query3 = $db->prepare($sql3);
-
-// On exécute la requête :
-$query3->execute();
+$name = selectUsers();
 
 // On stocke le résultat dans un tableau (je récupère tout le contenu du tableau avec fetchAll()),
-$categories = $query3->fetchAll(PDO::FETCH_ASSOC);
+$categories = selectCategories()
 
-
-
-// On ferme la connexion :
-require_once __DIR__ . '/../../../globalComponents/dbConnection/dbClose.php'
 ?>
 
 <!-- Ici on boucle sur $recipes pour donner la forme card à chaque recette de notre base de données -->

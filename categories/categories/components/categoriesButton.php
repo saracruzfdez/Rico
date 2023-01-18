@@ -17,7 +17,7 @@
 
                 <div class="button">
                     <!-- Dans le lien "Modifier cat" je spécifie un query parameter id qui correspond a la cat sur laquelle je me trouve depuis la page cat (requête HTTP) : -->
-                    <a href="/PROJET%20PERSO/categories/categoriesDelete/categoriesDelete.php?id=<?php echo ($category['id']); ?>" class="btn btn-primary">Supprimer categorie</a>
+                    <a href="/PROJET%20PERSO/categories/categoriesDelete/categoriesDelete.php?id=<?php echo ($category['id']); ?>" class="btn btn-primary">Supprimer catégorie</a>
                 </div>
             </div>
 

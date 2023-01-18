@@ -2,14 +2,14 @@
 <?php
 require_once __DIR__ . '/../../../globalComponents/sql.php';
 
-// I call de function selectUser() and pass it the parameter id SESSION :
-$user = selectUser($_SESSION["user"]["id"]);
-// $user has the result of selectUser();
+// I call de function selectUserById() and pass it the parameter id SESSION :
+$user = selectUserById($_SESSION["user"]["id"]);
+// $user has the result of selectUserById();
 ?>
 
 <!-- If my sql query result exist and that it is not empty show the connected user form with data. -->
 <?php
-if (isset($user) && !empty($user)) { ?>
+if (isset($user)) { ?>
     <!-- Here the editform to update user -->
     <div class="d-flex justify-content-center">
         <div class="col-md-8 col-lg-8 nopadding">
@@ -20,18 +20,18 @@ if (isset($user) && !empty($user)) { ?>
 
                     <div class="form-group">
                         <label for="name" class="form-label mt-2">Nom :</label>
-                        <input class="form-control" name="name" type="text" id="name" value="<?php echo $user[0]["name"] ?>" required>
+                        <input class="form-control" name="name" type="text" id="name" value="<?php echo $user["name"] ?>" required>
                     </div>
                     <div class="form-group">
                         <label for="email" class="form-label mt-2">Email :</label>
-                        <input class="form-control" name="email" type="text" id="email" min="1" max="120" value="<?php echo $user[0]["email"] ?>" required>
+                        <input class="form-control" name="email" type="text" id="email" min="1" max="120" value="<?php echo $user["email"] ?>" required>
                     </div>
                     <div class="form-group">
                         <label for="city" class="form-label mt-2">Ville :</label>
-                        <input class="form-control" name="city" type="text" id="city" min="1" max="120" value="<?php echo $user[0]["city"] ?>" required>
+                        <input class="form-control" name="city" type="text" id="city" min="1" max="120" value="<?php echo $user["city"] ?>" required>
                     </div>
 
-                    <input type="hidden" name="id" value="<?php echo $user[0]["id"] ?>" required>
+                    <input type="hidden" name="id" value="<?php echo $user["id"] ?>" required>
 
                     <button type="submit" class="btn btn-primary mt-2">Enregistrer</button>
                 </form>
