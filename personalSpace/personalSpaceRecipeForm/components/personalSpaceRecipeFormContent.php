@@ -13,7 +13,7 @@ if ($_POST) {
         && isset($_POST['recipe']) && !empty($_POST['recipe'])
     ) {
         // On inclut la connexion à la base :
-        require_once __DIR__ . '/../../../globalComponents/dbConnection/dbConnect.php';
+        require_once __DIR__ . '/../../../globalComponents/sql.php';
 
         // On nettoie les données envoyées :
         $image = strip_tags($_POST["image"]);
@@ -25,25 +25,7 @@ if ($_POST) {
         $ingredients = strip_tags($_POST["ingredients"]);
         $recipe = strip_tags($_POST["recipe"]);
 
-        $sql = "INSERT INTO `recipes` (`image`, `title`, `user_id`, `category_id`, `persons`, `time`, `ingredients`, `recipe`) VALUES (:image, :title, :user_id, :category_id, :persons, :time, :ingredients, :recipe)";
-
-        $query = $db->prepare($sql);
-
-        $query->bindValue('image', $image, PDO::PARAM_STR);
-        $query->bindValue('title', $title, PDO::PARAM_STR);
-        $query->bindValue('user_id', $user_id, PDO::PARAM_INT);
-        $query->bindValue('category_id', $category_id, PDO::PARAM_INT);
-        $query->bindValue('persons', $persons, PDO::PARAM_INT);
-        $query->bindValue('time', $time, PDO::PARAM_INT);
-        $query->bindValue('ingredients', $ingredients, PDO::PARAM_STR);
-        $query->bindValue('recipe', $recipe, PDO::PARAM_STR);
-
-        $query->execute();
-
-        // print_r($db->errorInfo());
-
-        // On inclut la déconnexion à la base :
-        require_once  __DIR__ . "/../../../globalComponents/dbConnection/dbClose.php";
+        createRecipe($image, $title, $user_id, $category_id, $persons, $time, $ingredients, $recipe)
 ?>
         <div class="container mt-3 text-center">
 

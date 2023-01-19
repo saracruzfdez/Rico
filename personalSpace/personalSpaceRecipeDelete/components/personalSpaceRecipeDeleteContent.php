@@ -1,28 +1,16 @@
 <!-- Page de detail de suppression de recette -->
 <?php
 // On inclut la connexion à la base :
-require_once  __DIR__ . "/../../../globalComponents/dbConnection/dbConnect.php";
-
-// Recupere l'id qui se trouve dans la requête HTTP generée au click du button "Supprimer recette" depuis chaque carte recette sur la page de detail de recette personnel :
-$recipeID3 = ($_GET['id']);
-$sql = "SELECT * FROM recipes WHERE id = $recipeID3";
-
-// On prépare la requête :
-$query = $db->prepare($sql);
-
-// On exécute la requête :
-$query->execute();
+require_once  __DIR__ . "/../../../globalComponents/sql.php";
 
 // On stocke le résultat dans un tableau (je récupère tout le contenu du tableau avec fetchAll()) :
-$recipes = $query->fetchAll(PDO::FETCH_ASSOC);
+$recipe = selectRecipeById($_GET['id']);
 
-// On ferme la connexion :
-require_once __DIR__ . "/../../../globalComponents/dbConnection/dbClose.php";
 ?>
 
 <!-- Si le résultat de la requête existe (isset) et qu'il n'est pas vide (car recette qui n'existe pas par exemple) alors question l'user sil est sur, sinon message "Recette inexistante" : -->
 <?php
-if (isset($recipes) && !empty($recipes)) { ?>
+if (isset($recipe)) { ?>
 
     <!-- Ici le formulaire pour supprimer une recette -->
 
@@ -37,7 +25,7 @@ if (isset($recipes) && !empty($recipes)) { ?>
 
                     <h3>Vous êtes sûr que vous voulez supprimer la recette ?</h3>
 
-                    <input type="hidden" name="id" value="<?php echo $recipes[0]['id'] ?>" required>
+                    <input type="hidden" name="id" value="<?php echo $recipe['id'] ?>" required>
 
                     <button type="submit" class="btn btn-primary mt-2 ">Supprimer</button>
 

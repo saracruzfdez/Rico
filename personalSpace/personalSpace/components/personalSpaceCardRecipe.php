@@ -10,11 +10,11 @@
             <h5 class="card-title"><?php echo ucfirst($recipe['title']); ?></h5>
 
 
-            <?php foreach ($name as $n) : ?>
+            <?php foreach ($users as $user) : ?>
 
                 <?php
-                if ($n['id'] === $recipe['user_id']) { ?>
-                    <h6 class="card-title"> par <?php echo ($n['name']); ?></h6>
+                if ($user['id'] === $recipe['user_id']) { ?>
+                    <h6 class="card-title"> par <?php echo ($user['name']); ?></h6>
 
             <?php }
             endforeach; ?>
