@@ -12,12 +12,10 @@ $user = selectUserById($_SESSION["user"]["id"]);
 if (isset($user)) { ?>
 
     <div class="container mb-3 mt-3 text-center">
-
         <form action="/PROJET%20PERSO/account/accountFormDelete/accountFormDelete.php" method="POST">
             <h3>Vous êtes sûr que vous voulez supprimer votre compte ?</h3>
             <button type="submit" class="btn btn-primary mt-2">Supprimer</button>
         </form>
-
     </div>
 
 <?php } 

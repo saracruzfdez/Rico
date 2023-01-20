@@ -1,6 +1,5 @@
 <?php
 // Here we do all the SQL queries :
-
 function prepareRequest($request)
 {
     try {
@@ -21,8 +20,8 @@ function prepareRequest($request)
     return $db->prepare($request);
 }
 
+
 // ACCOUNT :
-// 1."selectUserById($id)" select, READ, all from the table users, with a parameter id :
 function selectUserById($id)
 {
     // We prepare the query :
@@ -34,6 +33,7 @@ function selectUserById($id)
     // We stocke the result in an array (with fetchAll() I take all the array content) :
     return $query->fetch();
 }
+
 
 function selectUserByEmail($email)
 {
@@ -60,9 +60,7 @@ function selectUsers()
     return $user;
 }
 
-// -----
 
-// 2. deleteUser($id) DELETE un user :
 function deleteUser($id)
 {
     // We prepare the query :
@@ -73,9 +71,7 @@ function deleteUser($id)
     $query->execute();
 };
 
-// -----
 
-// 3. createUser() CREATE a new user and return son id :
 function createUser($name, $password, $city)
 {
     try {
@@ -110,8 +106,7 @@ function createUser($name, $password, $city)
     // that i am going to use later...
 }
 
-// -----
-// 4. updateUser() UPDATE an user :
+
 function updateUser($id, $name, $email, $city)
 {
     // We prepare the query :
@@ -126,7 +121,7 @@ function updateUser($id, $name, $email, $city)
     $query->execute();
 }
 
-// 6. selectUsersExceptConnected() select all users except the connected user :
+
 function selectUsersExceptConnected()
 {
     // We prepare the query :
@@ -139,8 +134,8 @@ function selectUsersExceptConnected()
     return $users;
 }
 
+
 // CATEGORIES :
-// 5. selectCategorie() SELECT all the categories :
 function selectCategories()
 {
     // We prepare the query :
@@ -153,6 +148,7 @@ function selectCategories()
     return $categories;
 }
 
+
 function createCategory($name)
 {
     // We prepare the query :
@@ -162,6 +158,7 @@ function createCategory($name)
     // We execute the query :
     $query->execute();
 }
+
 
 function deleteCategory($id)
 {
@@ -173,6 +170,7 @@ function deleteCategory($id)
     $query->execute();
 }
 
+
 function selectCategoryById($id)
 {
     // We prepare the query :
@@ -182,6 +180,7 @@ function selectCategoryById($id)
     // We stocke the result in an array (with fetchAll() I take all the array content) :
     return $query->fetch();
 }
+
 
 function updateCategory($id, $name)
 {
@@ -209,6 +208,7 @@ function selectRecipesByCategoryId($categoryId)
     return $recipes;
 }
 
+
 function selectRecipesByUserId($userId)
 {
     // We prepare the query :
@@ -220,6 +220,7 @@ function selectRecipesByUserId($userId)
 
     return $recipes;
 }
+
 
 function selectRecipesByCategoryIdAndUserId($categoryId, $userId)
 {
@@ -249,6 +250,7 @@ function selectRecipeById($id)
     return $query->fetch();
 }
 
+
 function selectRecipes()
 {
     // We prepare the query :
@@ -261,6 +263,7 @@ function selectRecipes()
     return $user;
 }
 
+
 function deleteRecipe($id)
 {
     // We prepare the query :
@@ -270,6 +273,7 @@ function deleteRecipe($id)
     // We execute the query :
     $query->execute();
 }
+
 
 function createRecipe($image, $title, $user_id, $category_id, $persons, $time, $ingredients, $recipe)
 {

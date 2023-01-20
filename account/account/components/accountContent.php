@@ -1,11 +1,9 @@
-<?php
-// This is the page that shows the users's profile :
+<?php // This is the page that shows the users's profile :
 require_once __DIR__ . '/../../../globalComponents/sql.php';
 
 // I call the function selectUserById() and pass it the parameter id SESSION :
 $user = selectUserById($_SESSION["user"]["id"]);
-// $user has the result of selectUserById();
-?>
+// $user has the result of selectUserById(); ?>
 
 <!-- Here we have the profile's user card in profile page : -->
 <div class="container mt-3">
@@ -13,7 +11,6 @@ $user = selectUserById($_SESSION["user"]["id"]);
     <div class="d-flex justify-content-center">
         <div class="col-sm-6 col-md-6 col-lg-6 nopadding">
             <div class="container mb-3 mt-3 nopadding">
-
                 <div class="card mb-3">
 
                     <div class="card-body text-center">

@@ -1,4 +1,4 @@
-<!-- Ici notre footer qui s'affichera sur chaque page du site -->
+<!-- Here is the footer -->
 <div class="container mt-3 text-center">
 
     <footer>

@@ -25,7 +25,6 @@ if (isset($recipe)) {
 
         <h1><?php echo ucfirst($recipe['title']); ?></h1>
 
-
         <?php foreach ($users as $user) : ?>
             <?php
             if ($user['id'] === $recipe['user_id']) { ?>
