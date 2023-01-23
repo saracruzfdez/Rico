@@ -1,9 +1,10 @@
-<!-- Ici le contenu de la page form (on récupère les données) : -->
+<!-- Here we have the data from the create recipe form : -->
 <?php
 
-// On vérifie qu'il y a des données qui arrivent, que les champs sont remplis et pas vides, c'est notre CREATE  :
+// I verifie data is coming from create recipe form :
 if ($_POST) {
     if (
+        // Here we vérifie that fileds are not empty et are setted :
         isset($_POST['image']) && !empty($_POST['image'])
         && isset($_POST['title']) && !empty($_POST['title'])
         && isset($_POST['category_id']) && !empty($_POST['category_id'])
@@ -12,10 +13,7 @@ if ($_POST) {
         && isset($_POST['ingredients']) && !empty($_POST['ingredients'])
         && isset($_POST['recipe']) && !empty($_POST['recipe'])
     ) {
-        // On inclut la connexion à la base :
-        require_once __DIR__ . '/../../../globalComponents/sql.php';
-
-        // On nettoie les données envoyées :
+        // We clean the data with strip_tags :
         $image = strip_tags($_POST["image"]);
         $title = strip_tags($_POST["title"]);
         $user_id = $_SESSION["user"]["id"];
@@ -25,19 +23,17 @@ if ($_POST) {
         $ingredients = strip_tags($_POST["ingredients"]);
         $recipe = strip_tags($_POST["recipe"]);
 
+        // Here we have the sql file in order to use the createRecipe() focntion :
+        require_once __DIR__ . '/../../../globalComponents/sql.php';
+
         createRecipe($image, $title, $user_id, $category_id, $persons, $time, $ingredients, $recipe)
 ?>
         <div class="container mt-3 text-center">
-
             <h3>Ta recette a été rajoutée à ton espace personnel ! &#127881;</h3>
-            
             <div class="button">
                 <a href="/PROJET%20PERSO/personalSpace/personalSpace/personalSpace.php"><button type="button" class="btn btn-primary mt-2">Voir espace personnel</button></a>
             </div>
-        
         </div>
-
-
 <?php
     }
 }

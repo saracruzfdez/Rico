@@ -10,7 +10,7 @@ $recipes = selectRecipes();
 $name = selectUsers();
 
 // On stocke le résultat dans un tableau (je récupère tout le contenu du tableau avec fetchAll()),
-$categories = selectCategories()
+$categories = selectCategories();
 
 ?>
 
@@ -20,9 +20,6 @@ $categories = selectCategories()
     <h3>Bienvenue à Rico !</h3>
 
     <p>Connectez-vous pour rajouter des recettes à vos favoris et créer les votres dans votre espace personnel &#128521;</p>
-
-
-
 
     <!-- Ici on boucle sur ????? -->
     <div class="d-flex flex-row flex-wrap justify-content-center">
@@ -34,7 +31,6 @@ $categories = selectCategories()
         <?php endforeach; ?>
 
     </div>
-
 
 
 

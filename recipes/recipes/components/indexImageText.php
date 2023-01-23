@@ -1,6 +1,4 @@
 <!-- Ici l'image et texte d'intro habillant la page d'accueil -->
-
-
 <div class="image-component">
     <div class="text">
         <p>Partagez vos envies de cuisine !</p>

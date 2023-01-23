@@ -2,12 +2,13 @@
 <?php
 require_once __DIR__ . '/../../../globalComponents/sql.php';
 
-// I call de function selectUserById() and pass it the parameter id SESSION :
+// I call de function selectUserById() and pass it the 
+// parameter id SESSION :
 $user = selectUserById($_SESSION["user"]["id"]);
 // $user has the result of selectUserById();
 ?>
-
-<!-- If my sql query result exist and that it is not empty we ask the user if he/she really wants to deletete account. Otherwise a "Ce user n'existe pas !" message appears -->
+<!-- If my sql query result exist and that it is not empty we 
+// ask the user if he/she really wants to deletete account. -->
 <?php
 if (isset($user)) { ?>
 
@@ -17,5 +18,4 @@ if (isset($user)) { ?>
             <button type="submit" class="btn btn-primary mt-2">Supprimer</button>
         </form>
     </div>
-
-<?php } 
+<?php }

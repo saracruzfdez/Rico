@@ -8,11 +8,11 @@ $recipe = selectRecipeById($_GET['id']);
 ?>
 
 <!-- Si le résultat de la requête existe (isset) et qu'il n'est pas vide (car recette qui n'existe pas par exemple) alors affiche le détail, sinon message "Recette inexistante" : -->
-<?php if (isset($recipe)) { 
-    
+<?php if (isset($recipe)) {
+
     $user = selectUserById($recipe["user_id"]);
 
-    ?>
+?>
     <!-- Ici le detail de la recette -->
     <div class="image-banner">
         <img src="<?php echo $recipe['image']; ?>" alt="">
@@ -86,14 +86,14 @@ $recipe = selectRecipeById($_GET['id']);
 
     <div class="image-component">
 
-<div class="text">
-    <p>Cette recette n'existe pas !</p>
-</div>
+        <div class="text">
+            <p>Cette recette n'existe pas !</p>
+        </div>
 
-<div class="image">
-    <img src="https://images.unsplash.com/photo-1506159904226-d6cfd457c30c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="">
-</div>
+        <div class="image">
+            <img src="https://images.unsplash.com/photo-1506159904226-d6cfd457c30c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="">
+        </div>
 
-</div>
+    </div>
 
 <?php } ?>

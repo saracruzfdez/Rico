@@ -1,8 +1,10 @@
-<!-- Here we have the data that comes from the accountCreate component ("Inscrivez-vous" form page), that matches with the "Tu est inscrit maintenant !" page and we create a new user -->
-<?php
-require_once __DIR__ . '/../../../globalComponents/sql.php';
+<!-- Here we have the data that comes from the accountCreate component 
+("Inscrivez-vous" form page), that matches with the "Tu est inscrit
+maintenant !" page and we create a new user -->
+<?php require_once __DIR__ . '/../../../globalComponents/sql.php';
 
-// Here we check that the data is coming from accountCreate, set and not empty :
+// Here we check that the data is coming from accountCreate, set and 
+//not empty :
 if ($_POST) {
     if (
         isset($_POST['name']) && !empty($_POST['name'])
@@ -10,11 +12,13 @@ if ($_POST) {
         && isset($_POST['city']) && !empty($_POST['city'])
         && isset($_POST['password']) && !empty($_POST['password'])
     ) {
-        // Here we clean data. The strip_tags() delete all null octets nuls and all markup PHP and HTML from code :
+        // Here we clean data. The strip_tags() delete all null octets 
+        // nuls and all markup PHP and HTML from code :
         $name = strip_tags($_POST["name"]);
         $city = strip_tags($_POST["city"]);
 
-        // We check that email is an email. filter_var() filters a variable with a specified filter :
+        // We check that email is an email. filter_var() filters a 
+        // variable with a specified filter :
         if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
             die("L'adresse email a un format invalide");
         }
@@ -36,10 +40,11 @@ if ($_POST) {
         <div class="container mt-3 text-center">
             <h3>Tu est inscrit maintenant ! &#127881;</h3>
             <div class="button">
-                <a href="/PROJET%20PERSO/account/account/account.php"><button type="button" class="btn btn-primary mt-2">Voir ton profil</button></a>
+                <a href="/PROJET%20PERSO/account/account/account.php">
+                    <button type="button" class="btn btn-primary mt-2">Voir ton profil</button>
+                </a>
             </div>
         </div>
-
 <?php
     }
 }

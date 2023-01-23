@@ -1,33 +1,46 @@
-/* Je recupere l'elem form par l'id */
+/* I take the form elelement by its id : */
 var personalSpaceRecipeCreate = document.getElementById('personalSpaceRecipeCreate');
 
-/* J'ajoute un evenement à la sumision de mon formulaire */
+function isValidUrl( url ) {
+    try {
+        let t = new URL(url)
+        return true
+    } catch (err){
+        return false
+    }
+}
+
+/* I add an eventListener on submit */
 personalSpaceRecipeCreate.addEventListener('submit', function (e) {
 
-    /* Validation du titre */
-    /* Je recupere mon premier input "titre" avec son id "title" */
+
+    /* Title Validation */
+    /* Firstly I take the title by its id : */
     let myTitle = document.getElementById('title');
 
-    /* myTitle acepts a-z low and uppercase, accents and spaces */
+    /* With a pattern, regex, myTitle acepts a-z low and uppercase, 
+    accents and spaces */
     let myTitleRegex = /^[a-zàâçéèêëîïôûùüÿñæœ\s]+$/i;
 
-    /* Si myTitle est vide (avec trim je retire les espaces vides du debut et fin du text) alors on arrete le comportement par defaut de la sumission avec preventdefault : */
+    /* if myTitle is empty (trim remove empty start/end string spaces) 
+    i stop the default behaviour of submit with preventdefault() : */
     if (myTitle.value.trim() == "") {
 
         e.preventDefault();
 
-        /* si myTitle ne passe pas le test de myTitleRegex alors la sumission s'arrete et message d'erreur */
+        /* if myTitle doesn't validate myTitleRegex test, the submit 
+        don't work and an error/info message appears */
     } else if (myTitleRegex.test(myTitle.value) == false) {
 
         let myTitleError = document.getElementById('titleError');
         myTitleError.innerHTML = "Le titre doit comporter des lettres et des espaces uniquement."
         myTitleError.style.color = "maroon"
         e.preventDefault();
-
     }
 
-    /* Validation du nombre de personnes */
-    /* Je recupere mon input "nombre de personnes" avec son id "persons" */
+
+    /* number of persons Validation */
+    /* Firstly I take the number of persons by its id : */
     let persons = document.getElementById('persons');
 
     /* persons acepts 0-9 numbers */
@@ -43,11 +56,11 @@ personalSpaceRecipeCreate.addEventListener('submit', function (e) {
         myPersonsError.innerHTML = "Ce champ doit comporter des chiffres uniquement."
         myPersonsError.style.color = "maroon"
         e.preventDefault();
-
     }
 
-    /* Validation du nombre de minutes, temps */
-    /* Je recupere mon input "temps" avec son id "time" */
+
+    /* Time Validation */
+    /* Firstly I take the time by its id : */
     let time = document.getElementById('time');
 
     /* time acepts 0-9 numbers */
@@ -63,11 +76,11 @@ personalSpaceRecipeCreate.addEventListener('submit', function (e) {
         myTimeError.innerHTML = "Ce champ doit comporter des chiffres uniquement."
         myTimeError.style.color = "maroon"
         e.preventDefault();
-
     }
 
-    /* Validation de l'input ingredients */
-    /* Je recupere mon input "ingredients" avec son id "ingredients" */
+
+    /* Ingredients Validation */
+    /* Firstly I take the ingrediets by its id : */
     let ingredients = document.getElementById('ingredients');
 
     /* ingredients acepts 0-9 numbers, a-z low and uppercase, accents, hyphens, coma, dots ans spaces */
@@ -83,11 +96,11 @@ personalSpaceRecipeCreate.addEventListener('submit', function (e) {
         myIngredientsError.innerHTML = "Ce champ doit comporter des chiffres, des lettres, des tirets, des virgules, des points et des espaces uniquement."
         myIngredientsError.style.color = "maroon"
         e.preventDefault();
-
     }
 
-    /* Validation de l'input recette */
-    /* Je recupere mon input "recette" avec son id "recipe" */
+
+    /* recipe Validation */
+    /* Firstly I take the recipe by its id : */
     let recipe = document.getElementById('recipe');
 
     /* ingredients acepts 0-9 numbers, a-z low and uppercase, accents, hyphens, coma, dots ans spaces */
@@ -103,27 +116,22 @@ personalSpaceRecipeCreate.addEventListener('submit', function (e) {
         myRecipeError.innerHTML = "Ce champ doit comporter des chiffres, des lettres, des tirets, des virgules, des points et des espaces uniquement."
         myRecipeError.style.color = "maroon"
         e.preventDefault();
-
     }
 
-    /* Validation de l'input image */
-    /* Je recupere mon input "image" avec son id "recipe" */
-    let image = document.getElementById('img');
 
-    /* recipe acepts 0-9 numbers, a-z low and uppercase, hyphens ans spaces */
-    let myImageRegex = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/gm;
+    /* image Validation */
+    /* Firstly I take the image by its id : */
+    let image = document.getElementById('img');
 
     if (image.value.trim() == "") {
 
         e.preventDefault();
 
-    } else if (myImageRegex.test(image.value) == false) {
+    } else if (isValidUrl(image.value) == false) {
 
         let myImageError = document.getElementById('imageError');
         myImageError.innerHTML = "Ce champ doit comporter une URL valide uniquement."
         myImageError.style.color = "maroon"
         e.preventDefault();
-
     }
-
 })

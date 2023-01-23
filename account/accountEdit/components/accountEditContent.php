@@ -1,13 +1,13 @@
 <!-- Here is the edit account form : -->
 <?php
 require_once __DIR__ . '/../../../globalComponents/sql.php';
-
-// I call de function selectUserById() and pass it the parameter id SESSION :
+// I call de function selectUserById() and pass it 
+// the parameter id SESSION :
 $user = selectUserById($_SESSION["user"]["id"]);
 // $user has the result of selectUserById();
 ?>
-
-<!-- If my sql query result exist and that it is not empty show the connected user form with data. -->
+<!-- If my sql query result exist and that it is not empty 
+// show the connected user form with data. -->
 <?php
 if (isset($user)) { ?>
     <!-- Here the editform to update user -->

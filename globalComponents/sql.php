@@ -15,38 +15,43 @@ function prepareRequest($request)
         // Stops script :
         die();
     }
-
     // We prepare the query :
     return $db->prepare($request);
 }
-
 
 // ACCOUNT :
 function selectUserById($id)
 {
     // We prepare the query :
     $query = prepareRequest("SELECT * FROM users WHERE id =:id");
-
+    // I link with bindValue() values to parameters and specify the type :
     $query->bindValue(':id', $id, PDO::PARAM_INT);
     // We execute the query :
     $query->execute();
-    // We stocke the result in an array (with fetchAll() I take all the array content) :
-    return $query->fetch();
+    // We stocke the result. PDO Statement::fetch — 
+    // Fetches the next row from a result set :
+    $value = $query->fetch();
+    if( $value == false ) {
+        return null;
+    } 
+    return $value;
 }
-
 
 function selectUserByEmail($email)
 {
     // We prepare the query :
     $query = prepareRequest("SELECT * FROM users WHERE email =:email");
-
+    // I link with bindValue() values to parameters and specify the type :
     $query->bindValue(':email', $email, PDO::PARAM_STR);
     // We execute the query :
     $query->execute();
-    // We stocke the result in an array (with fetchAll() I take all the array content) :
-    return $query->fetch();
+    // We stocke the result. PDOStatement::fetch — Fetches the next row from a result set :
+    $value = $query->fetch();
+    if( $value == false ) {
+        return null;
+    } 
+    return $value;
 }
-
 
 function selectUsers()
 {
@@ -87,12 +92,11 @@ function createUser($name, $password, $city)
         // Stops script :
         die();
     }
-
+    
     // Query sql to insert in de database, the CREATE (CRUD) :
     $sql = "INSERT INTO `users` (`name`, `email`, `city`, `password`, `roles`) VALUES (:name, :email, :city, '$password', '[\"ROLE_USER\"]')";
     // We prepare the query :
     $query = $db->prepare($sql);
-
     // I link with bindValue() values to parameters and specify the type :
     $query->bindValue(':name', $name, PDO::PARAM_STR);
     $query->bindValue(':email', $_POST["email"], PDO::PARAM_STR);
@@ -177,8 +181,13 @@ function selectCategoryById($id)
     $query = prepareRequest("SELECT * FROM categories WHERE id =" . ($id));
     // We execute the query :
     $query->execute();
+
     // We stocke the result in an array (with fetchAll() I take all the array content) :
-    return $query->fetch();
+    $value = $query->fetch();
+    if( $value == false ) {
+        return null;
+    } 
+    return $value;
 }
 
 
@@ -186,7 +195,6 @@ function updateCategory($id, $name)
 {
     // We prepare the query :
     $query = prepareRequest("UPDATE `categories` SET `name`=:name WHERE `id`=:id;");
-
     // I link with bindValue() values to parameters and specify the type :
     $query->bindValue('id', $id, PDO::PARAM_INT);
     $query->bindValue('name', $name, PDO::PARAM_STR);
@@ -246,8 +254,12 @@ function selectRecipeById($id)
     $query->bindValue('id', $id, PDO::PARAM_INT);
     // We execute the query :
     $query->execute();
-    // We stocke the result in an array (with fetchAll() I take all the array content) :
-    return $query->fetch();
+
+    $value = $query->fetch();
+    if( $value == false ) {
+        return null;
+    } 
+    return $value;
 }
 
 
